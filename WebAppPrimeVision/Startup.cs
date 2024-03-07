@@ -10,8 +10,7 @@ using WebAppPrimeVision.Data; // Assicurati di aggiornare YourNamespace con il t
 
 namespace ASPDotNetCoreWithIdentity // Assicurati di aggiornare YourNamespace con il tuo namespace
 {
-    public class Startup  //prova
-                           //prova2
+    public class Startup  //prova2
     {
         public Startup(IConfiguration configuration)
         {
