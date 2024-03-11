@@ -4,6 +4,7 @@ using WebAppPrimeVision.Models;
 
 namespace WebAppPrimeVision.Controllers
 {
+    //prova
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
