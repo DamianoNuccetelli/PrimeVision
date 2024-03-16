@@ -66,7 +66,6 @@ namespace ASPDotNetCoreWithIdentity // Assicurati di aggiornare YourNamespace co
             services.AddControllersWithViews();
             services.AddRazorPages();
         }
-
         // Questo metodo viene chiamato durante il runtime. Usato per configurare la pipeline di richieste HTTP.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
