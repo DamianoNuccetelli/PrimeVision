@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
-//using Microsoft.AspNetCore.Identity.UI.V4.Pages.Account.Internal;
 using Microsoft.AspNetCore.Mvc;
 using PrimeVision.API.Areas.Identity.Data;
 using PrimeVision.API.ViewModels;
@@ -58,6 +57,7 @@ namespace PrimeVision.API.Controllers
                     return false;
                 }
 
+#pragma warning disable CS8602 // Dereference of a possibly null reference.
                 if (user.Name.ToUpper() == user.NormalizedEmail)
                 {
                     // This doesn't count login failures towards account lockout
@@ -81,10 +81,10 @@ namespace PrimeVision.API.Controllers
                         var otherResult = await _signInManager.PasswordSignInAsync(user.UserName, model.Password, model.RememberMe, lockoutOnFailure: false);
                         IsSuccess = otherResult.Succeeded;
 
-
                     }
 
                 }
+#pragma warning restore CS8602 // Dereference of a possibly null reference.
 
             }
             catch (Exception ex)
@@ -113,15 +113,30 @@ namespace PrimeVision.API.Controllers
         }
 
         [HttpPost("Register")]
-        public async Task<bool> Register(RegisterVM model)
+        public async Task<IActionResult> Register(RegisterVM model)
         {
-            bool IsSuccess = false;
+            
             try
             {
+                // Verifica che i dati di input siano stati forniti correttamente
+                if (string.IsNullOrWhiteSpace(model.Username) || string.IsNullOrWhiteSpace(model.Address) ||
+                    string.IsNullOrWhiteSpace(model.Email) || string.IsNullOrWhiteSpace(model.Password) ||
+                    string.IsNullOrWhiteSpace(model.ConfirmPassword))
+                {
+                    return BadRequest("Tutti i campi sono obbligatori.");
+                }
+
+
+                // Verifica che i dati di input soddisfino i requisiti di validazione, se necessario
+                if (!IsValidEmailAddress(model.Email))
+                {
+                    return BadRequest("Indirizzo email non valido.");
+                }
+
                 // Make control on password and confirm password. Identity make it first if the data are different
                 if (model.Password != model.ConfirmPassword)
                 {
-                    return false;
+                    return BadRequest("La password e la conferma della password non corrispondono.");
                 }
 
                 PrimeVisionUser user = new PrimeVisionUser
@@ -138,19 +153,32 @@ namespace PrimeVision.API.Controllers
                 {
                     // N.B. Remember to update the ConfirmedMail in the ApplicationUser class (Data/ApplicationUser.cs) IdentityUser
                     await _signInManager.SignInAsync(user, isPersistent: false);
-                    IsSuccess = true;
+                    return Ok("Registrazione completata con successo.");
                 }
-                foreach (IdentityError error in result.Errors)
+                else
                 {
-                    ModelState.AddModelError(string.Empty, error.Description);
+                    return BadRequest("Errore durante la registrazione.");
                 }
             }
             catch (Exception ex)
             {
-                string sErr = ex.Message;
-                IsSuccess = false;
+                return StatusCode(500, "Si è verificato un errore durante la registrazione.");
             }
-            return IsSuccess;
+           
+        }
+
+        // Metodo per verificare se un indirizzo email è valido GABRIELE
+        private bool IsValidEmailAddress(string email)
+        {
+            try
+            {
+                var addr = new System.Net.Mail.MailAddress(email);
+                return addr.Address == email;
+            }
+            catch
+            {
+                return false;
+            }
         }
     }
 }

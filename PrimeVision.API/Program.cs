@@ -1,7 +1,9 @@
+using CLSerilog;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using PrimeVision.API.Areas.Identity.Data;
 using PrimeVision.API.Data;
+using Serilog;
 
 namespace PrimeVision.API
 {
@@ -13,8 +15,8 @@ namespace PrimeVision.API
             var ReactSpecificOrigins = "enablecorsPrimeVision";
 
             var builder = WebApplication.CreateBuilder(args);
-            
-            
+
+
             var connectionString = builder.Configuration.GetConnectionString("PrimeVisionAPIContextConnection") ?? throw new InvalidOperationException("Connection string 'PrimeVisionAPIContextConnection' not found.");
 
             builder.Services.AddDbContext<PrimeVisionAPIContext>(options => options.UseSqlServer(connectionString));
@@ -39,7 +41,7 @@ namespace PrimeVision.API
                 options.AddPolicy(name: ReactSpecificOrigins,
                                        builder =>
                                        {
-                                           builder.WithOrigins("http://localhost:3000", "https://localhost:7209")
+                                           builder.WithOrigins("http://localhost:3000", "https://localhost:7209", "*") //Tutte le porte con * (test momentaneo)
                                    .AllowAnyHeader()
                                    .AllowAnyMethod();
                                        });
@@ -51,17 +53,34 @@ namespace PrimeVision.API
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
+            //SERILOG
+            ManageSerilog.ConfigureLogger();
+            builder.Host.UseSerilog();
+
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
             //if (app.Environment.IsDevelopment())
             //{
-                app.UseSwagger();
-                app.UseSwaggerUI();
+            app.UseSwagger();
+            app.UseSwaggerUI();
             //}
 
             app.UseHttpsRedirection();
+
+            // SERILOG
+            app.UseSerilogRequestLogging();
+
             app.UseStaticFiles();
+
+            //SERILOG
+            //Middleware per il logging dell'indirizzo IP del client
+            app.Use(async (context, next) =>
+            {
+                ManageSerilog.LogClientIPAddress(context);
+                await next();
+            });
 
             app.UseRouting();
             app.UseAuthorization();
