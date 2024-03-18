@@ -61,6 +61,7 @@
     <Folder Include="dbo\" />
     <Folder Include="dbo\Tables\" />
     <Folder Include="Security\" />
+    <Folder Include="dbo\Stored Procedures\" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\__EFMigrationsHistory.sql" />
@@ -91,5 +92,21 @@
     <Build Include="dbo\Tables\T_RelRegistaOpera.sql" />
     <Build Include="dbo\Tables\T_RelAttoreOpera.sql" />
     <Build Include="Security\Permissions.sql" />
+    <Build Include="dbo\Stored Procedures\AggiungiUtente.sql" />
+    <Build Include="dbo\Stored Procedures\AggiungiStagione.sql" />
+    <Build Include="dbo\Stored Procedures\AggiungiSerie.sql" />
+    <Build Include="dbo\Stored Procedures\AggiungiRegista.sql" />
+    <Build Include="dbo\Stored Procedures\AggiungiRecensione.sql" />
+    <Build Include="dbo\Stored Procedures\AggiungiProfilo.sql" />
+    <Build Include="dbo\Stored Procedures\AggiungiPreferito.sql" />
+    <Build Include="dbo\Stored Procedures\AggiungiPiano.sql" />
+    <Build Include="dbo\Stored Procedures\AggiungiLingua.sql" />
+    <Build Include="dbo\Stored Procedures\AggiungiGenere.sql" />
+    <Build Include="dbo\Stored Procedures\AggiungiFilm.sql" />
+    <Build Include="dbo\Stored Procedures\AggiungiEpisodio.sql" />
+    <Build Include="dbo\Stored Procedures\AggiungiDurataPiano.sql" />
+    <Build Include="dbo\Stored Procedures\AggiungiDocumentario.sql" />
+    <Build Include="dbo\Stored Procedures\AggiungiCronologia.sql" />
+    <Build Include="dbo\Stored Procedures\AggiungiAttore.sql" />
   </ItemGroup>
 </Project>
