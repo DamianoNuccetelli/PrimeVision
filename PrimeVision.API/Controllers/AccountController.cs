@@ -24,6 +24,25 @@ namespace PrimeVision.API.Controllers
             this._userManager = userManager;
         }
 
+        //[HttpPost("Login")]
+        //public async Task<bool> Login(LoginVM model)
+        //{
+        //    bool IsSuccess = false;
+        //    try
+        //    {
+        //        // This doesn't count login failures towards account lockout
+        //        // To enable password failures to trigger account lockout, set lockoutOnFailure: true
+        //        var result = await _signInManager.PasswordSignInAsync(model.Username, model.Password, false, lockoutOnFailure: false);
+        //        IsSuccess = result.Succeeded;
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        string sErr = ex.Message;
+        //        IsSuccess = false;
+        //    }
+        //    return IsSuccess;
+        //}
+
         [HttpPost("Login")]
         public async Task<bool> Login(LoginVM model)
         {
@@ -32,8 +51,41 @@ namespace PrimeVision.API.Controllers
             {
                 // This doesn't count login failures towards account lockout
                 // To enable password failures to trigger account lockout, set lockoutOnFailure: true
-                var result = await _signInManager.PasswordSignInAsync(model.Username, model.Password, false, lockoutOnFailure: false);
-                IsSuccess = result.Succeeded;
+                // Remember to set isConfirmedMail to True
+                var user = _userManager.Users.ToList().Find(u => u.Email == model.Email);
+                if (user == null)
+                {
+                    return false;
+                }
+
+                if (user.Name.ToUpper() == user.NormalizedEmail)
+                {
+                    // This doesn't count login failures towards account lockout
+                    // To enable password failures to trigger account lockout, set lockoutOnFailure: true
+
+                    var result = await _signInManager.PasswordSignInAsync(model.Username, model.Password, model.RememberMe, lockoutOnFailure: false);
+                    IsSuccess = result.Succeeded;
+                }
+                else
+                {
+
+                    if (!user.EmailConfirmed)
+                    {
+                        return false;
+                    }
+                    else
+                    {
+                        // https://stackoverflow.com/questions/26430094/asp-net-identity-provider-signinmanager-keeps-returning-failure
+                        var userIsSigned = await _userManager.CheckPasswordAsync(user, model.Password);
+
+                        var otherResult = await _signInManager.PasswordSignInAsync(user.UserName, model.Password, model.RememberMe, lockoutOnFailure: false);
+                        IsSuccess = otherResult.Succeeded;
+
+
+                    }
+
+                }
+
             }
             catch (Exception ex)
             {
@@ -76,8 +128,8 @@ namespace PrimeVision.API.Controllers
                 {
                     UserName = model.Email,
                     Email = model.Email,
-                    //Name = model.Username,
-                    //Address = model.Address
+                    Name = model.Username,
+                    Address = model.Address
                 };
                 // Register
                 IdentityResult result = await _userManager.CreateAsync(user, model.Password);
