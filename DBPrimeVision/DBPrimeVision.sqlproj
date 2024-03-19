@@ -91,5 +91,16 @@
     <Build Include="dbo\Tables\T_RelRegistaOpera.sql" />
     <Build Include="dbo\Tables\T_RelAttoreOpera.sql" />
     <Build Include="Security\Permissions.sql" />
+    <Build Include="dbo\Stored Procedures\GetSerieByTitle.sql" />
+    <Build Include="dbo\Stored Procedures\GetSerieByRegista.sql" />
+    <Build Include="dbo\Stored Procedures\GetSerieByGenre.sql" />
+    <Build Include="dbo\Stored Procedures\GetSerieByActor.sql" />
+    <Build Include="dbo\Stored Procedures\GetFilmByTitle.sql" />
+    <Build Include="dbo\Stored Procedures\GetFilmByRegista.sql" />
+    <Build Include="dbo\Stored Procedures\GetFilmByGenere.sql" />
+    <Build Include="dbo\Stored Procedures\GetFilmByActor.sql" />
+    <Build Include="dbo\Stored Procedures\GetDocumentarioByTitle.sql" />
+    <Build Include="dbo\Stored Procedures\GetDocumentarioByRegista.sql" />
+    <Build Include="dbo\Stored Procedures\GetDocumentarioByGenere.sql" />
   </ItemGroup>
 </Project>
