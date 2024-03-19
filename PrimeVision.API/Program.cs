@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using PrimeVision.API.Areas.Identity.Data;
 using PrimeVision.API.Data;
+using PrimeVision.API.Models;
 using Serilog;
 
 namespace PrimeVision.API
@@ -20,6 +21,9 @@ namespace PrimeVision.API
             var connectionString = builder.Configuration.GetConnectionString("PrimeVisionAPIContextConnection") ?? throw new InvalidOperationException("Connection string 'PrimeVisionAPIContextConnection' not found.");
 
             builder.Services.AddDbContext<PrimeVisionAPIContext>(options => options.UseSqlServer(connectionString));
+
+            // Registra PrimeVisionContextProcedures scoped service
+           // builder.Services.AddScoped<IPrimeVisionContextProcedures, PrimeVisionContextProcedures>();
 
             builder.Services.AddIdentity<PrimeVisionUser, IdentityRole>(
              options =>
