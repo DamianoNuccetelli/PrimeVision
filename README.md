@@ -22,7 +22,7 @@ You can also make use of visual aids by including materials like screenshots to 
 Also if your project will require authentication like passwords or usernames, this is a good section to include the credentials.
 
 <h2>4.1 Serilog - Come settare correttamente</h2>
-Ricordarsi di creare una cartella PrimeVisione, seguendo il percorso C:\LOGS\PrimeVision.
+Ricordarsi di creare una cartella PrimeVision, seguendo il percorso C:\LOGS\PrimeVision.
 
 <h1>5. Credits</h1>
 
