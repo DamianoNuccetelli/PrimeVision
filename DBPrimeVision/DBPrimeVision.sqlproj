@@ -72,7 +72,6 @@
     <Build Include="dbo\Tables\AspNetUserLogins.sql" />
     <Build Include="dbo\Tables\AspNetUserRoles.sql" />
     <Build Include="dbo\Tables\AspNetUserTokens.sql" />
-    <Build Include="dbo\Tables\T_Utente.sql" />
     <Build Include="dbo\Tables\T_Profilo.sql" />
     <Build Include="dbo\Tables\T_Piano.sql" />
     <Build Include="dbo\Tables\T_DurataPiano.sql" />
@@ -92,21 +91,5 @@
     <Build Include="dbo\Tables\T_RelRegistaOpera.sql" />
     <Build Include="dbo\Tables\T_RelAttoreOpera.sql" />
     <Build Include="Security\Permissions.sql" />
-    <Build Include="dbo\Stored Procedures\AggiungiUtente.sql" />
-    <Build Include="dbo\Stored Procedures\AggiungiStagione.sql" />
-    <Build Include="dbo\Stored Procedures\AggiungiSerie.sql" />
-    <Build Include="dbo\Stored Procedures\AggiungiRegista.sql" />
-    <Build Include="dbo\Stored Procedures\AggiungiRecensione.sql" />
-    <Build Include="dbo\Stored Procedures\AggiungiProfilo.sql" />
-    <Build Include="dbo\Stored Procedures\AggiungiPreferito.sql" />
-    <Build Include="dbo\Stored Procedures\AggiungiPiano.sql" />
-    <Build Include="dbo\Stored Procedures\AggiungiLingua.sql" />
-    <Build Include="dbo\Stored Procedures\AggiungiGenere.sql" />
-    <Build Include="dbo\Stored Procedures\AggiungiFilm.sql" />
-    <Build Include="dbo\Stored Procedures\AggiungiEpisodio.sql" />
-    <Build Include="dbo\Stored Procedures\AggiungiDurataPiano.sql" />
-    <Build Include="dbo\Stored Procedures\AggiungiDocumentario.sql" />
-    <Build Include="dbo\Stored Procedures\AggiungiCronologia.sql" />
-    <Build Include="dbo\Stored Procedures\AggiungiAttore.sql" />
   </ItemGroup>
 </Project>
