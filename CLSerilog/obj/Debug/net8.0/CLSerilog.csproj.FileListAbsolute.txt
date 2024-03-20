@@ -1,0 +1,60 @@
+C:\Users\gabri\OneDrive\Desktop\Prime Vision\PrimeVision-master\CLSerilog\bin\Debug\net8.0\CLSerilog.deps.json
+C:\Users\gabri\OneDrive\Desktop\Prime Vision\PrimeVision-master\CLSerilog\bin\Debug\net8.0\CLSerilog.dll
+C:\Users\gabri\OneDrive\Desktop\Prime Vision\PrimeVision-master\CLSerilog\bin\Debug\net8.0\CLSerilog.pdb
+C:\Users\gabri\OneDrive\Desktop\Prime Vision\PrimeVision-master\CLSerilog\obj\Debug\net8.0\CLSerilog.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\gabri\OneDrive\Desktop\Prime Vision\PrimeVision-master\CLSerilog\obj\Debug\net8.0\CLSerilog.AssemblyInfoInputs.cache
+C:\Users\gabri\OneDrive\Desktop\Prime Vision\PrimeVision-master\CLSerilog\obj\Debug\net8.0\CLSerilog.AssemblyInfo.cs
+C:\Users\gabri\OneDrive\Desktop\Prime Vision\PrimeVision-master\CLSerilog\obj\Debug\net8.0\CLSerilog.csproj.CoreCompileInputs.cache
+C:\Users\gabri\OneDrive\Desktop\Prime Vision\PrimeVision-master\CLSerilog\obj\Debug\net8.0\CLSerilog.dll
+C:\Users\gabri\OneDrive\Desktop\Prime Vision\PrimeVision-master\CLSerilog\obj\Debug\net8.0\refint\CLSerilog.dll
+C:\Users\gabri\OneDrive\Desktop\Prime Vision\PrimeVision-master\CLSerilog\obj\Debug\net8.0\CLSerilog.pdb
+C:\Users\gabri\OneDrive\Desktop\Prime Vision\PrimeVision-master\CLSerilog\obj\Debug\net8.0\ref\CLSerilog.dll
+C:\Users\gabri\OneDrive\Desktop\Prime Vision\PrimeVision-master\CLSerilog\obj\Debug\net8.0\CLSerilog.csproj.AssemblyReference.cache
+C:\Users\gabri\OneDrive\Desktop\PrimeVisionProject\CLSerilog\bin\Debug\net8.0\CLSerilog.deps.json
+C:\Users\gabri\OneDrive\Desktop\PrimeVisionProject\CLSerilog\bin\Debug\net8.0\CLSerilog.dll
+C:\Users\gabri\OneDrive\Desktop\PrimeVisionProject\CLSerilog\bin\Debug\net8.0\CLSerilog.pdb
+C:\Users\gabri\OneDrive\Desktop\PrimeVisionProject\CLSerilog\obj\Debug\net8.0\CLSerilog.csproj.AssemblyReference.cache
+C:\Users\gabri\OneDrive\Desktop\PrimeVisionProject\CLSerilog\obj\Debug\net8.0\CLSerilog.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\gabri\OneDrive\Desktop\PrimeVisionProject\CLSerilog\obj\Debug\net8.0\CLSerilog.AssemblyInfoInputs.cache
+C:\Users\gabri\OneDrive\Desktop\PrimeVisionProject\CLSerilog\obj\Debug\net8.0\CLSerilog.AssemblyInfo.cs
+C:\Users\gabri\OneDrive\Desktop\PrimeVisionProject\CLSerilog\obj\Debug\net8.0\CLSerilog.csproj.CoreCompileInputs.cache
+C:\Users\gabri\OneDrive\Desktop\PrimeVisionProject\CLSerilog\obj\Debug\net8.0\CLSerilog.dll
+C:\Users\gabri\OneDrive\Desktop\PrimeVisionProject\CLSerilog\obj\Debug\net8.0\refint\CLSerilog.dll
+C:\Users\gabri\OneDrive\Desktop\PrimeVisionProject\CLSerilog\obj\Debug\net8.0\CLSerilog.pdb
+C:\Users\gabri\OneDrive\Desktop\PrimeVisionProject\CLSerilog\obj\Debug\net8.0\ref\CLSerilog.dll
+C:\Users\gabri\OneDrive\Desktop\ProgettoPrimeVision2.0(funzionante)\CLSerilog\bin\Debug\net8.0\CLSerilog.deps.json
+C:\Users\gabri\OneDrive\Desktop\ProgettoPrimeVision2.0(funzionante)\CLSerilog\bin\Debug\net8.0\CLSerilog.dll
+C:\Users\gabri\OneDrive\Desktop\ProgettoPrimeVision2.0(funzionante)\CLSerilog\bin\Debug\net8.0\CLSerilog.pdb
+C:\Users\gabri\OneDrive\Desktop\ProgettoPrimeVision2.0(funzionante)\CLSerilog\obj\Debug\net8.0\CLSerilog.csproj.AssemblyReference.cache
+C:\Users\gabri\OneDrive\Desktop\ProgettoPrimeVision2.0(funzionante)\CLSerilog\obj\Debug\net8.0\CLSerilog.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\gabri\OneDrive\Desktop\ProgettoPrimeVision2.0(funzionante)\CLSerilog\obj\Debug\net8.0\CLSerilog.AssemblyInfoInputs.cache
+C:\Users\gabri\OneDrive\Desktop\ProgettoPrimeVision2.0(funzionante)\CLSerilog\obj\Debug\net8.0\CLSerilog.AssemblyInfo.cs
+C:\Users\gabri\OneDrive\Desktop\ProgettoPrimeVision2.0(funzionante)\CLSerilog\obj\Debug\net8.0\CLSerilog.csproj.CoreCompileInputs.cache
+C:\Users\gabri\OneDrive\Desktop\ProgettoPrimeVision2.0(funzionante)\CLSerilog\obj\Debug\net8.0\CLSerilog.dll
+C:\Users\gabri\OneDrive\Desktop\ProgettoPrimeVision2.0(funzionante)\CLSerilog\obj\Debug\net8.0\refint\CLSerilog.dll
+C:\Users\gabri\OneDrive\Desktop\ProgettoPrimeVision2.0(funzionante)\CLSerilog\obj\Debug\net8.0\CLSerilog.pdb
+C:\Users\gabri\OneDrive\Desktop\ProgettoPrimeVision2.0(funzionante)\CLSerilog\obj\Debug\net8.0\ref\CLSerilog.dll
+C:\Users\gabri\OneDrive\Desktop\TEST PROJ DB\CLSerilog\bin\Debug\net8.0\CLSerilog.deps.json
+C:\Users\gabri\OneDrive\Desktop\TEST PROJ DB\CLSerilog\bin\Debug\net8.0\CLSerilog.dll
+C:\Users\gabri\OneDrive\Desktop\TEST PROJ DB\CLSerilog\bin\Debug\net8.0\CLSerilog.pdb
+C:\Users\gabri\OneDrive\Desktop\TEST PROJ DB\CLSerilog\obj\Debug\net8.0\CLSerilog.csproj.AssemblyReference.cache
+C:\Users\gabri\OneDrive\Desktop\TEST PROJ DB\CLSerilog\obj\Debug\net8.0\CLSerilog.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\gabri\OneDrive\Desktop\TEST PROJ DB\CLSerilog\obj\Debug\net8.0\CLSerilog.AssemblyInfoInputs.cache
+C:\Users\gabri\OneDrive\Desktop\TEST PROJ DB\CLSerilog\obj\Debug\net8.0\CLSerilog.AssemblyInfo.cs
+C:\Users\gabri\OneDrive\Desktop\TEST PROJ DB\CLSerilog\obj\Debug\net8.0\CLSerilog.csproj.CoreCompileInputs.cache
+C:\Users\gabri\OneDrive\Desktop\TEST PROJ DB\CLSerilog\obj\Debug\net8.0\CLSerilog.dll
+C:\Users\gabri\OneDrive\Desktop\TEST PROJ DB\CLSerilog\obj\Debug\net8.0\refint\CLSerilog.dll
+C:\Users\gabri\OneDrive\Desktop\TEST PROJ DB\CLSerilog\obj\Debug\net8.0\CLSerilog.pdb
+C:\Users\gabri\OneDrive\Desktop\TEST PROJ DB\CLSerilog\obj\Debug\net8.0\ref\CLSerilog.dll
+C:\Users\gabri\OneDrive\Desktop\vecchitestPrimeVision\TEST PROJ DB\CLSerilog\bin\Debug\net8.0\CLSerilog.deps.json
+C:\Users\gabri\OneDrive\Desktop\vecchitestPrimeVision\TEST PROJ DB\CLSerilog\bin\Debug\net8.0\CLSerilog.dll
+C:\Users\gabri\OneDrive\Desktop\vecchitestPrimeVision\TEST PROJ DB\CLSerilog\bin\Debug\net8.0\CLSerilog.pdb
+C:\Users\gabri\OneDrive\Desktop\vecchitestPrimeVision\TEST PROJ DB\CLSerilog\obj\Debug\net8.0\CLSerilog.csproj.AssemblyReference.cache
+C:\Users\gabri\OneDrive\Desktop\vecchitestPrimeVision\TEST PROJ DB\CLSerilog\obj\Debug\net8.0\CLSerilog.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\gabri\OneDrive\Desktop\vecchitestPrimeVision\TEST PROJ DB\CLSerilog\obj\Debug\net8.0\CLSerilog.AssemblyInfoInputs.cache
+C:\Users\gabri\OneDrive\Desktop\vecchitestPrimeVision\TEST PROJ DB\CLSerilog\obj\Debug\net8.0\CLSerilog.AssemblyInfo.cs
+C:\Users\gabri\OneDrive\Desktop\vecchitestPrimeVision\TEST PROJ DB\CLSerilog\obj\Debug\net8.0\CLSerilog.csproj.CoreCompileInputs.cache
+C:\Users\gabri\OneDrive\Desktop\vecchitestPrimeVision\TEST PROJ DB\CLSerilog\obj\Debug\net8.0\CLSerilog.dll
+C:\Users\gabri\OneDrive\Desktop\vecchitestPrimeVision\TEST PROJ DB\CLSerilog\obj\Debug\net8.0\refint\CLSerilog.dll
+C:\Users\gabri\OneDrive\Desktop\vecchitestPrimeVision\TEST PROJ DB\CLSerilog\obj\Debug\net8.0\CLSerilog.pdb
+C:\Users\gabri\OneDrive\Desktop\vecchitestPrimeVision\TEST PROJ DB\CLSerilog\obj\Debug\net8.0\ref\CLSerilog.dll
