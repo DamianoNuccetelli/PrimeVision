@@ -21,6 +21,9 @@ You can also make use of visual aids by including materials like screenshots to 
 
 Also if your project will require authentication like passwords or usernames, this is a good section to include the credentials.
 
+<h2>4.1 Serilog - Come settare correttamente</h2>
+Ricordarsi di creare una cartella PrimeVision, seguendo il percorso C:\LOGS\PrimeVision.
+
 <h1>5. Credits</h1>
 
 If you worked on the project as a team or an organization, list your collaborators/team members. You should also include links to their GitHub profiles and social media too.
