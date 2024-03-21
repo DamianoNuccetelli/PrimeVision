@@ -58,3 +58,16 @@ C:\Users\gabri\OneDrive\Desktop\vecchitestPrimeVision\TEST PROJ DB\CLSerilog\obj
 C:\Users\gabri\OneDrive\Desktop\vecchitestPrimeVision\TEST PROJ DB\CLSerilog\obj\Debug\net8.0\refint\CLSerilog.dll
 C:\Users\gabri\OneDrive\Desktop\vecchitestPrimeVision\TEST PROJ DB\CLSerilog\obj\Debug\net8.0\CLSerilog.pdb
 C:\Users\gabri\OneDrive\Desktop\vecchitestPrimeVision\TEST PROJ DB\CLSerilog\obj\Debug\net8.0\ref\CLSerilog.dll
+C:\Github\PerEsame\PrimeVision\CLSerilog\bin\Debug\net8.0\CLSerilog.deps.json
+C:\Github\PerEsame\PrimeVision\CLSerilog\bin\Debug\net8.0\CLSerilog.dll
+C:\Github\PerEsame\PrimeVision\CLSerilog\bin\Debug\net8.0\CLSerilog.pdb
+C:\Github\PerEsame\PrimeVision\CLSerilog\obj\Debug\net8.0\CLSerilog.csproj.AssemblyReference.cache
+C:\Github\PerEsame\PrimeVision\CLSerilog\obj\Debug\net8.0\CLSerilog.GeneratedMSBuildEditorConfig.editorconfig
+C:\Github\PerEsame\PrimeVision\CLSerilog\obj\Debug\net8.0\CLSerilog.AssemblyInfoInputs.cache
+C:\Github\PerEsame\PrimeVision\CLSerilog\obj\Debug\net8.0\CLSerilog.AssemblyInfo.cs
+C:\Github\PerEsame\PrimeVision\CLSerilog\obj\Debug\net8.0\CLSerilog.csproj.CoreCompileInputs.cache
+C:\Github\PerEsame\PrimeVision\CLSerilog\obj\Debug\net8.0\CLSerilog.sourcelink.json
+C:\Github\PerEsame\PrimeVision\CLSerilog\obj\Debug\net8.0\CLSerilog.dll
+C:\Github\PerEsame\PrimeVision\CLSerilog\obj\Debug\net8.0\refint\CLSerilog.dll
+C:\Github\PerEsame\PrimeVision\CLSerilog\obj\Debug\net8.0\CLSerilog.pdb
+C:\Github\PerEsame\PrimeVision\CLSerilog\obj\Debug\net8.0\ref\CLSerilog.dll

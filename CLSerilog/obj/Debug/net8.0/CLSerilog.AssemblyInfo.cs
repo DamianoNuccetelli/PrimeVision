@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CLSerilog")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0dbd0518fe5ec78c48915fc21afb060d4ba458f5")]
 [assembly: System.Reflection.AssemblyProductAttribute("CLSerilog")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CLSerilog")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

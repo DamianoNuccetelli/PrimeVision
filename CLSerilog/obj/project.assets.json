@@ -1460,11 +1460,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\gabri\\OneDrive\\Desktop\\vecchitestPrimeVision\\TEST PROJ DB\\CLSerilog\\CLSerilog.csproj",
+      "projectUniqueName": "C:\\Github\\PerEsame\\PrimeVision\\CLSerilog\\CLSerilog.csproj",
       "projectName": "CLSerilog",
-      "projectPath": "C:\\Users\\gabri\\OneDrive\\Desktop\\vecchitestPrimeVision\\TEST PROJ DB\\CLSerilog\\CLSerilog.csproj",
+      "projectPath": "C:\\Github\\PerEsame\\PrimeVision\\CLSerilog\\CLSerilog.csproj",
       "packagesPath": "C:\\Users\\gabri\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\gabri\\OneDrive\\Desktop\\vecchitestPrimeVision\\TEST PROJ DB\\CLSerilog\\obj\\",
+      "outputPath": "C:\\Github\\PerEsame\\PrimeVision\\CLSerilog\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\gabri\\AppData\\Roaming\\NuGet\\NuGet.Config",

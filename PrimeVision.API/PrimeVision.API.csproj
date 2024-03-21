@@ -27,7 +27,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Users\gabri\OneDrive\Desktop\vecchitestPrimeVision\TEST PROJ DB\CLSerilog\CLSerilog.csproj" />
+    <ProjectReference Include="..\CLSerilog\CLSerilog.csproj" />
   </ItemGroup>
 
 </Project>

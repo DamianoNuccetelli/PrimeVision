@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "9IVzIU2+5j35XzEmoNM8tWF4aVTIS/F/eFUU7cf8YLe6aDvJHV5KLNYthuxIiHeBV02Rc2LpVSDO9YXh5P5j9Q==",
+  "dgSpecHash": "cXUJpY9VwSBllASmm80TBr0vXrx3jofhBtoRR4+thytIQ1MMjgyJ50ijbjKZk2D38017mh2qvwfpTw9tXSdtFg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\gabri\\OneDrive\\Desktop\\vecchitestPrimeVision\\TEST PROJ DB\\CLSerilog\\CLSerilog.csproj",
+  "projectFilePath": "C:\\Github\\PerEsame\\PrimeVision\\CLSerilog\\CLSerilog.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\gabri\\.nuget\\packages\\gelf.extensions.logging\\2.6.0\\gelf.extensions.logging.2.6.0.nupkg.sha512",
     "C:\\Users\\gabri\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\8.0.0\\microsoft.extensions.configuration.abstractions.8.0.0.nupkg.sha512",

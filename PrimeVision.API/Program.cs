@@ -45,7 +45,7 @@ namespace PrimeVision.API
                 options.AddPolicy(name: ReactSpecificOrigins,
                                        builder =>
                                        {
-                                           builder.WithOrigins("http://localhost:3000", "https://localhost:7209", "*") //Tutte le porte con * (test momentaneo)
+                                           builder.WithOrigins("http://localhost:3000") 
                                    .AllowAnyHeader()
                                    .AllowAnyMethod();
                                        });
