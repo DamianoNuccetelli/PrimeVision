@@ -1,7 +1,8 @@
 import React from 'react';
 import './Main.css';
 import Cards from './Cards';
-
+//il main è il componente principale della home page,
+// contiene i bottoni per la scelta del genere e i componenti Cards
 function Main() {
     return (
         <div className='mainClass'>
