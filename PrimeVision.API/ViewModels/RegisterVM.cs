@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace PrimeVision.API.ViewModels
+namespace PrimeVision.APIIdentity.ViewModels
 {
     public class RegisterVM
     {
@@ -22,6 +22,8 @@ namespace PrimeVision.API.ViewModels
         [DataType(DataType.Password)]
         public string? ConfirmPassword { get; set; }
         [DataType(DataType.MultilineText)]
+
+        public string? Name { get; set; }
         public string? Address { get; set; }
     }
 }

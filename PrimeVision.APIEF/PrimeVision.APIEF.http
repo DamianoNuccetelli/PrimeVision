@@ -1,0 +1,6 @@
+@PrimeVision.APIEF_HostAddress = http://localhost:5139
+
+GET {{PrimeVision.APIEF_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

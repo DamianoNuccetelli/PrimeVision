@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using PrimeVision.APIIdentity.Areas.Identity.Data;
-using PrimeVision.APIIdentity.Data;
+using PrimeVision.APIEF.Models;
+
 
 namespace PrimeVision.API
 {
@@ -13,25 +13,12 @@ namespace PrimeVision.API
             var ReactSpecificOrigins = "enablecorsPrimeVision";
 
             var builder = WebApplication.CreateBuilder(args);
-            
-            
-            var connectionString = builder.Configuration.GetConnectionString("PrimeVisionAPIContextConnection") ?? throw new InvalidOperationException("Connection string 'PrimeVisionAPIContextConnection' not found.");
 
-            builder.Services.AddDbContext<PrimeVisionAPIContext>(options => options.UseSqlServer(connectionString));
 
-            builder.Services.AddIdentity<PrimeVisionUser, IdentityRole>(
-             options =>
-             {
-                 options.SignIn.RequireConfirmedAccount = true;
-                 options.Password.RequiredUniqueChars = 0;
-                 options.Password.RequireUppercase = false;
-                 options.Password.RequireNonAlphanumeric = false;
-                 options.Password.RequireLowercase = false;
-                 options.Password.RequiredLength = 8;
-             })
-             .AddDefaultUI()
-             .AddEntityFrameworkStores<PrimeVisionAPIContext>()
-             .AddDefaultTokenProviders();
+            var connectionString = builder.Configuration.GetConnectionString("PrimeVisionContextConnection") ?? throw new InvalidOperationException("Connection string 'PrimeVisionAPIContextConnection' not found.");
+
+            builder.Services.AddDbContext<PrimeVisionContext>(options => options.UseSqlServer(connectionString));
+
 
             // Add CORS
             builder.Services.AddCors(options =>
@@ -56,15 +43,15 @@ namespace PrimeVision.API
             // Configure the HTTP request pipeline.
             //if (app.Environment.IsDevelopment())
             //{
-                app.UseSwagger();
-                app.UseSwaggerUI();
+            app.UseSwagger();
+            app.UseSwaggerUI();
             //}
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
             app.UseRouting();
-            
+
             // CORS
             app.UseCors(ReactSpecificOrigins);
 

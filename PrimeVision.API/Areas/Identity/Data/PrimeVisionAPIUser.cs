@@ -5,7 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 
-namespace PrimeVision.API.Areas.Identity.Data;
+namespace PrimeVision.APIIdentity.Areas.Identity.Data;
 
 // Add profile data for application users by adding properties to the PrimeVisionAPIUser class
 public class PrimeVisionAPIUser : IdentityUser
