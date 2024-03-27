@@ -7,6 +7,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Areas\Identity\Pages\**" />
+    <Compile Remove="Pages\**" />
+    <Content Remove="Areas\Identity\Pages\**" />
+    <Content Remove="Pages\**" />
+    <EmbeddedResource Remove="Areas\Identity\Pages\**" />
+    <EmbeddedResource Remove="Pages\**" />
+    <None Remove="Areas\Identity\Pages\**" />
+    <None Remove="Pages\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.3" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="8.0.3" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.3" />

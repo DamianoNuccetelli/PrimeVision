@@ -1,14 +1,16 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Identity;
 //using Microsoft.AspNetCore.Identity.UI.V4.Pages.Account.Internal;
 using Microsoft.AspNetCore.Mvc;
-using PrimeVision.API.Areas.Identity.Data;
-using PrimeVision.API.ViewModels;
+using PrimeVision.APIIdentity.ViewModels;
+using PrimeVision.APIIdentity.Areas.Identity.Data;
 
-namespace PrimeVision.API.Controllers
+
+namespace PrimeVision.APIIdentity.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [EnableCors(PolicyName = "enablecorsPrimeVision")]
     public class AccountController : ControllerBase
     {
         // For Login - Logout
@@ -24,24 +26,6 @@ namespace PrimeVision.API.Controllers
             this._userManager = userManager;
         }
 
-        //[HttpPost("Login")]
-        //public async Task<bool> Login(LoginVM model)
-        //{
-        //    bool IsSuccess = false;
-        //    try
-        //    {
-        //        // This doesn't count login failures towards account lockout
-        //        // To enable password failures to trigger account lockout, set lockoutOnFailure: true
-        //        var result = await _signInManager.PasswordSignInAsync(model.Username, model.Password, false, lockoutOnFailure: false);
-        //        IsSuccess = result.Succeeded;
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        string sErr = ex.Message;
-        //        IsSuccess = false;
-        //    }
-        //    return IsSuccess;
-        //}
 
         [HttpPost("Login")]
         public async Task<bool> Login(LoginVM model)
@@ -52,13 +36,13 @@ namespace PrimeVision.API.Controllers
                 // This doesn't count login failures towards account lockout
                 // To enable password failures to trigger account lockout, set lockoutOnFailure: true
                 // Remember to set isConfirmedMail to True
-                var user = _userManager.Users.ToList().Find(u => u.Email == model.Email);
+                var user = _userManager.Users.ToList().Find(u => u.UserName == model.Username);
                 if (user == null)
                 {
                     return false;
                 }
 
-                if (user.Name.ToUpper() == user.NormalizedEmail)
+                if (user.UserName.ToUpper() == user.NormalizedUserName)
                 {
                     // This doesn't count login failures towards account lockout
                     // To enable password failures to trigger account lockout, set lockoutOnFailure: true
@@ -126,9 +110,9 @@ namespace PrimeVision.API.Controllers
 
                 PrimeVisionUser user = new PrimeVisionUser
                 {
-                    UserName = model.Email,
+                    UserName = model.Username,
                     Email = model.Email,
-                    Name = model.Username,
+                    Name = model.Name,
                     Address = model.Address
                 };
                 // Register
@@ -144,6 +128,7 @@ namespace PrimeVision.API.Controllers
                 {
                     ModelState.AddModelError(string.Empty, error.Description);
                 }
+
             }
             catch (Exception ex)
             {
@@ -152,5 +137,8 @@ namespace PrimeVision.API.Controllers
             }
             return IsSuccess;
         }
+
+
     }
 }
+

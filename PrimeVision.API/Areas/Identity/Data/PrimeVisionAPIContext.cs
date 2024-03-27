@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using PrimeVision.API.Areas.Identity.Data;
+using PrimeVision.APIIdentity.Areas.Identity.Data;
 
-namespace PrimeVision.API.Data;
+namespace PrimeVision.APIIdentity.Data;
 
 public class PrimeVisionAPIContext : IdentityDbContext<PrimeVisionUser>
 {
@@ -18,4 +18,6 @@ public class PrimeVisionAPIContext : IdentityDbContext<PrimeVisionUser>
         // For example, you can rename the ASP.NET Identity table names and more.
         // Add your customizations after calling base.OnModelCreating(builder);
     }
+
+    public DbSet<PrimeVision.APIIdentity.ViewModels.DataUserRole> DataUserRole { get; set; } = default!;
 }

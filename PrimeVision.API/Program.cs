@@ -3,8 +3,6 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using PrimeVision.API.Areas.Identity.Data;
 using PrimeVision.API.Data;
-using Serilog;
-using Serilog.Events;
 
 namespace PrimeVision.API
 {
@@ -86,12 +84,8 @@ namespace PrimeVision.API
 
             app.UseRouting();
             app.UseAuthorization();
-
             // CORS
             app.UseCors(ReactSpecificOrigins);
-
-            //Serilog
-            app.UseSerilogRequestLogging();
 
             app.UseAuthorization();
 
