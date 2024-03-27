@@ -1,8 +1,10 @@
 using CLSerilog;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using PrimeVision.API.Areas.Identity.Data;
-using PrimeVision.API.Data;
+using PrimeVision.APIIdentity.Areas.Identity.Data;
+using PrimeVision.APIIdentity.Data;
+using Serilog;
+using Serilog.Events;
 
 namespace PrimeVision.API
 {
