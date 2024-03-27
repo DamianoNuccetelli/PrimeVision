@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PrimeVision.API", "PrimeVis
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "DBPrimeVision", "DBPrimeVision\DBPrimeVision.sqlproj", "{59EFF394-94DE-499B-B96E-7C2937B86BB9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CLSerilog", "CLSerilog\CLSerilog.csproj", "{D286BF28-D079-4144-93AC-C224E62240C5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,6 +25,10 @@ Global
 		{59EFF394-94DE-499B-B96E-7C2937B86BB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{59EFF394-94DE-499B-B96E-7C2937B86BB9}.Release|Any CPU.Build.0 = Release|Any CPU
 		{59EFF394-94DE-499B-B96E-7C2937B86BB9}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{D286BF28-D079-4144-93AC-C224E62240C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D286BF28-D079-4144-93AC-C224E62240C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D286BF28-D079-4144-93AC-C224E62240C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D286BF28-D079-4144-93AC-C224E62240C5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,7 +1,10 @@
+using CLSerilog;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using PrimeVision.API.Areas.Identity.Data;
 using PrimeVision.API.Data;
+using Serilog;
+using Serilog.Events;
 
 namespace PrimeVision.API
 {
@@ -13,9 +16,26 @@ namespace PrimeVision.API
             var ReactSpecificOrigins = "enablecorsPrimeVision";
 
             var builder = WebApplication.CreateBuilder(args);
-            
-            
+
             var connectionString = builder.Configuration.GetConnectionString("PrimeVisionAPIContextConnection") ?? throw new InvalidOperationException("Connection string 'PrimeVisionAPIContextConnection' not found.");
+
+            //Rimuovo Microsoft logger
+            builder.Logging.ClearProviders();
+
+            // Configurazione del logger Serilog
+            Log.Logger = new LoggerConfiguration()
+                .MinimumLevel.Debug()
+                .MinimumLevel.Override("Microsoft", LogEventLevel.Error)
+                .MinimumLevel.Override("Microsoft.AspNetCore", LogEventLevel.Fatal)
+                .Enrich.FromLogContext()
+                .Enrich.WithMachineName()
+                .Enrich.WithProcessId()
+                .Enrich.WithEnvironmentUserName()
+                .WriteTo.File("C:\\LOGS\\PrimeVision\\applog-.txt", rollingInterval: RollingInterval.Day)
+                .WriteTo.Console()
+                .CreateLogger();
+
+            builder.Host.UseSerilog();
 
             builder.Services.AddDbContext<PrimeVisionAPIContext>(options => options.UseSqlServer(connectionString));
 
@@ -44,6 +64,7 @@ namespace PrimeVision.API
                                    .AllowAnyMethod();
                                        });
             });
+
             // Add services to the container.
 
             builder.Services.AddControllers();
@@ -53,20 +74,24 @@ namespace PrimeVision.API
 
             var app = builder.Build();
 
-            // Configure the HTTP request pipeline.
-            //if (app.Environment.IsDevelopment())
-            //{
+
+            if (app.Environment.IsDevelopment())
+            {
                 app.UseSwagger();
                 app.UseSwaggerUI();
-            //}
+            }
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
             app.UseRouting();
             app.UseAuthorization();
+
             // CORS
             app.UseCors(ReactSpecificOrigins);
+
+            //Serilog
+            app.UseSerilogRequestLogging();
 
             app.UseAuthorization();
 
@@ -74,5 +99,8 @@ namespace PrimeVision.API
 
             app.Run();
         }
+
+
+
     }
 }
