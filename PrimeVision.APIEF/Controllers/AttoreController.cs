@@ -14,7 +14,6 @@ namespace PrimeVision.APIEF.Controllers
     public class AttoreController : ControllerBase
     {
         private readonly PrimeVisionContext _context;
-
         public AttoreController(PrimeVisionContext context)
         {
             _context = context;
@@ -77,11 +76,22 @@ namespace PrimeVision.APIEF.Controllers
         [HttpPost]
         public async Task<ActionResult<TAttore>> PostTAttore(TAttore tAttore)
         {
+
             _context.TAttores.Add(tAttore);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetTAttore", new { id = tAttore.Id }, tAttore);
         }
+
+
+        // GABRIELE TODO SISTEMARE IL METODO (inutile/inutilizzato)
+        [HttpGet("GetListaAttori")]
+        public async Task<ActionResult<IEnumerable<TAttore>>> PostListaAttori()
+        {
+            var listaAttori = await _context.TAttores.ToListAsync();
+            return listaAttori;
+        }
+        //FINE METODO ***********************
 
         // DELETE: api/Attore/5
         [HttpDelete("{id}")]

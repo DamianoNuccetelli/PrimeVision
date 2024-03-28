@@ -3,6 +3,8 @@ import Home from './views/Home/Home';
 import Contact from './views/Contact/Contact';
 import Login from './Identity/Login/Login';
 import About from './views/About/About';
+import Film from './views/Film/Film';
+
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {
@@ -14,6 +16,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/film" element={<Film />} />
         </Routes>
       </Router>
     </>
