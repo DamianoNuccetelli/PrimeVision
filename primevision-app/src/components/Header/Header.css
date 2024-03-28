@@ -4,7 +4,7 @@
     align-items: flex-start;
     justify-content: center;
     width: 40%;
-    height: 47vh;
+    height: 55vh;
     box-sizing: border-box;
     padding: 0 3% 1% 4%;
 }
@@ -23,7 +23,7 @@
 
 .headerClass input[type='button'] {
     width: 25%;
-    height: 12%;
+    height: 10%;
     font-size: 1em;
     background-color: rgba(255, 0, 0, 0.863);
     color: white;
