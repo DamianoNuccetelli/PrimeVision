@@ -6,6 +6,7 @@ import About from './views/About/About';
 import Film from './views/Film/Film';
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Register from './Identity/Login/Register';
 
 function App() {
   return (
@@ -16,7 +17,6 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/film" element={<Film />} />
         </Routes>
       </Router>
     </>
