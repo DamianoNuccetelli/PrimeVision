@@ -2,8 +2,6 @@ import React from 'react';
 import './Identity.css';
 import Navbar from '../../components/Navbar/Navbar';
 import { Link } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEnvelope } from '@fortawesome/free-solid-svg-icons'; // Importa l'icona dell'email
 
 
 function Login() {

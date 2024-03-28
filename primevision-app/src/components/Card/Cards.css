@@ -10,7 +10,7 @@
     width: 11%;
     margin: 10px;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 5px 8px 16px rgba(0, 0, 0, 0.3); 
     overflow: hidden;
     user-select: none;
     transition: transform 0.5s ease;
@@ -19,7 +19,7 @@
 
 .card:hover {
     transform: scale(1.05);
-    box-shadow: inset 0 0 0 5px black;
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.4);
 }
 
 .card img {
@@ -45,4 +45,8 @@
 
 .arrowIcon:last-child {
     margin-left: 20px; 
+}
+
+.hidden {
+  display: none;
 }

@@ -67,7 +67,6 @@ namespace PrimeVision.APIIdentity.Controllers
 
 
                     }
-
                 }
 
             }
