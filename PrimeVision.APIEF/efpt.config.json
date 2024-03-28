@@ -6,84 +6,16 @@
    "IncludeConnectionString": true,
    "ModelNamespace": null,
    "OutputContextPath": null,
-   "OutputPath": "Models",
+   "OutputPath": "Temporanea",
    "PreserveCasingWithRegex": true,
    "ProjectRootNamespace": "PrimeVision.APIEF",
    "Schemas": null,
    "SelectedHandlebarsLanguage": 2,
-   "SelectedToBeGenerated": 0,
+   "SelectedToBeGenerated": 2,
    "T4TemplatePath": null,
    "Tables": [
       {
-         "Name": "[dbo].[T_Attore]",
-         "ObjectType": 0
-      },
-      {
-         "Name": "[dbo].[T_Cronologia]",
-         "ObjectType": 0
-      },
-      {
-         "Name": "[dbo].[T_Documentario]",
-         "ObjectType": 0
-      },
-      {
-         "Name": "[dbo].[T_DurataPiano]",
-         "ObjectType": 0
-      },
-      {
-         "Name": "[dbo].[T_Episodio]",
-         "ObjectType": 0
-      },
-      {
          "Name": "[dbo].[T_Film]",
-         "ObjectType": 0
-      },
-      {
-         "Name": "[dbo].[T_Genere]",
-         "ObjectType": 0
-      },
-      {
-         "Name": "[dbo].[T_Lingua]",
-         "ObjectType": 0
-      },
-      {
-         "Name": "[dbo].[T_Piano]",
-         "ObjectType": 0
-      },
-      {
-         "Name": "[dbo].[T_Preferito]",
-         "ObjectType": 0
-      },
-      {
-         "Name": "[dbo].[T_Profilo]",
-         "ObjectType": 0
-      },
-      {
-         "Name": "[dbo].[T_Recensione]",
-         "ObjectType": 0
-      },
-      {
-         "Name": "[dbo].[T_Regista]",
-         "ObjectType": 0
-      },
-      {
-         "Name": "[dbo].[T_RelAttoreOpera]",
-         "ObjectType": 0
-      },
-      {
-         "Name": "[dbo].[T_RelLinguaOpera]",
-         "ObjectType": 0
-      },
-      {
-         "Name": "[dbo].[T_RelRegistaOpera]",
-         "ObjectType": 0
-      },
-      {
-         "Name": "[dbo].[T_Serie]",
-         "ObjectType": 0
-      },
-      {
-         "Name": "[dbo].[T_Stagione]",
          "ObjectType": 0
       }
    ],

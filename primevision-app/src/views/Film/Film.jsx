@@ -53,6 +53,7 @@ const FilmList = () => {
                         <th>Vietato</th>
                         <th>Premiato</th>
                         <th>GenereID</th>
+                        <th>Locandina</th>
                         {/* Aggiungi altre intestazioni della tabella se necessario */}
                     </tr>
                 </thead>
@@ -66,6 +67,7 @@ const FilmList = () => {
                             <td>{film.isVietato ? '🟢' : '🔴'}</td>
                             <td>{film.isPremiato ? '🟢' : '🔴'}</td>
                             <td>{getGenereName(film.genereId)}</td>
+                            <td><img src={film.Locandina} alt="Locandina" style={{width: '100px'}} /></td>
                             {/* Aggiungi altre celle della tabella se necessario */}
                         </tr>
                     ))}
