@@ -22,6 +22,19 @@ function Navbar() {
     );
   }
 
+    if (location.pathname === '/register') {
+      return (
+        <nav className='navbarClass'>
+          <div className='navbarLoginLeft'>
+            <img src={logoPrimeVision} alt='logo' />
+          </div>
+          <div className='navbarLoginRight'>
+            <Link to="/login">LOGIN</Link>
+          </div>
+        </nav>
+      );
+    }
+
   return (
     <nav className='navbarClass'>
       <div className='navbarLogo'>

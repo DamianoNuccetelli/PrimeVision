@@ -49,6 +49,7 @@
 .loginLayout input[type='password']:focus {
   background-color: #fff;
   border: 2px solid red;
+  
 }
 
 .loginLayout input[type='submit'] {
@@ -95,6 +96,15 @@
 }
 
 .registerLink:hover {
+  text-decoration: underline;
+}
+
+.loginLink {
+  color: #fff;
+  text-decoration: none;
+}
+
+.loginrLink:hover {
   text-decoration: underline;
 }
 
