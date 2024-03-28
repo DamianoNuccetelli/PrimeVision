@@ -5,40 +5,71 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using PrimeVision.APIEF.Models;
+using CLCommon.Models;
+using CLBusinessLayer;
+using Microsoft.AspNetCore.Cors;
+using CLSerilog;
 
 namespace PrimeVision.APIEF.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [EnableCors(PolicyName = "enablecorsPrimeVision")]
     public class FilmController : ControllerBase
     {
         private readonly PrimeVisionContext _context;
+        private readonly ILogger<FilmController> _logger;
+        private ManageBL oBL = null;
 
-        public FilmController(PrimeVisionContext context)
+        public FilmController(PrimeVisionContext context, ILogger<FilmController> logger)
         {
             _context = context;
+            _logger = logger;
         }
 
         // GET: api/Film
         [HttpGet]
         public async Task<ActionResult<IEnumerable<TFilm>>> GetTFilms()
         {
-            return await _context.TFilms.ToListAsync();
+            List<TFilm> listFilm = null;
+            try
+            {
+                oBL = new ManageBL(_context);
+                listFilm = await oBL.GetAllFilms();
+            }
+            catch (Exception ex)
+            {
+                string errorMessage = GetLogMessage.LogError("Utente", "Namespace", ex);
+                _logger.LogError(errorMessage);
+            }
+            return listFilm;
         }
 
         // GET: api/Film/5
         [HttpGet("{id}")]
         public async Task<ActionResult<TFilm>> GetTFilm(int id)
         {
-            var tFilm = await _context.TFilms.FindAsync(id);
+            //var tFilm = await _context.TFilms.FindAsync(id);
+            TFilm oFilm = null;
 
-            if (tFilm == null)
+            try
+            {
+                oBL = new ManageBL(_context);
+                oFilm = await oBL.GetDetailsFilm(id);
+            }
+            catch (Exception ex)
+            {
+                string errorMessage = GetLogMessage.LogError("Utente", "Namespace", ex);
+                _logger.LogError(errorMessage);
+            }
+
+
+            if (oFilm == null)
             {
                 return NotFound();
             }
 
-            return tFilm;
+            return oFilm;
         }
 
         // PUT: api/Film/5
@@ -51,11 +82,14 @@ namespace PrimeVision.APIEF.Controllers
                 return BadRequest();
             }
 
-            _context.Entry(tFilm).State = EntityState.Modified;
+            //_context.Entry(tFilm).State = EntityState.Modified;
+
 
             try
             {
-                await _context.SaveChangesAsync();
+                oBL = new ManageBL(_context);
+                await oBL.UpdateFilm(tFilm);
+
             }
             catch (DbUpdateConcurrencyException)
             {
@@ -77,8 +111,17 @@ namespace PrimeVision.APIEF.Controllers
         [HttpPost]
         public async Task<ActionResult<TFilm>> PostTFilm(TFilm tFilm)
         {
-            _context.TFilms.Add(tFilm);
-            await _context.SaveChangesAsync();
+            try
+            {
+                oBL = new ManageBL(_context);
+                await oBL.AddFilm(tFilm);
+            }
+            catch (Exception ex)
+            {
+                string errorMessage = GetLogMessage.LogError("Utente", "Namespace", ex);
+                _logger.LogError(errorMessage);
+            }
+
 
             return CreatedAtAction("GetTFilm", new { id = tFilm.Id }, tFilm);
         }
@@ -87,14 +130,22 @@ namespace PrimeVision.APIEF.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteTFilm(int id)
         {
-            var tFilm = await _context.TFilms.FindAsync(id);
-            if (tFilm == null)
+            
+            if (id == 0)
             {
                 return NotFound();
             }
 
-            _context.TFilms.Remove(tFilm);
-            await _context.SaveChangesAsync();
+            try
+            {
+                oBL = new ManageBL(_context);
+                await oBL.DeleteFilm(id);
+            }
+            catch (Exception ex)
+            {
+                string errorMessage = GetLogMessage.LogError("Utente", "Namespace", ex);
+                _logger.LogError(errorMessage);
+            }
 
             return NoContent();
         }
