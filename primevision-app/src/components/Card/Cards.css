@@ -46,3 +46,7 @@
 .arrowIcon:last-child {
     margin-left: 20px; 
 }
+
+.hidden {
+    display: none;
+  }

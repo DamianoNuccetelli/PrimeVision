@@ -33,14 +33,18 @@ function Cards() {
     };
 
     const handleRightArrowClick = () => {
-        setStartIndex(prevIndex => Math.min(listFilm.length - 8, prevIndex + 1));
+        if (startIndex >= listFilm.length - 8) {
+            setStartIndex(0);
+        } else {
+            setStartIndex(prevIndex => prevIndex + 1);
+        }
     };
 
     const visibleFilms = listFilm.slice(startIndex, startIndex + 8);
 
     return (
         <div className="cardContainer">
-            <FontAwesomeIcon icon={faArrowAltCircleLeft} className='arrowIcon' onClick={handleLeftArrowClick} />
+            <FontAwesomeIcon icon={faArrowAltCircleLeft} className={startIndex === 0 ? 'arrowIcon hidden' : 'arrowIcon'} onClick={handleLeftArrowClick} />
             {visibleFilms.map((film, index) => (
                 <div key={index} className="card">
                     <img src={film.imgURL} alt={film.name} />
