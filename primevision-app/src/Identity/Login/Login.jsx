@@ -17,7 +17,7 @@ function Login() {
         <input type='password' placeholder='Inserisci password' />
         <input type='submit' value="Accedi" />
         <Link to="/forgot-password" className='forgotClass'>Hai dimenticato la password?</Link>
-        <div className='separator'></div> {/* Aggiunta linea di separazione */}
+        <div className='separator'></div> {/* Aggiunta linea di separazione...... */}
         <div className='registerLinkContainer'>
           <Link to="/register" className='registerLink'>Non hai un account? Registrati qui!</Link>
         </div>
