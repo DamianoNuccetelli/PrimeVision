@@ -1,9 +1,8 @@
 import './App.css';
-import Home from './components/Home';
-import About from './components/home_components/navbar_components/About';
-import Contact from './components/home_components/navbar_components/Contact';
-import Login from './components/Login';
-
+import Home from './views/Home/Home';
+import Contact from './views/Contact/Contact';
+import Login from './Identity/Login/Login';
+import About from './views/About/About';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {
