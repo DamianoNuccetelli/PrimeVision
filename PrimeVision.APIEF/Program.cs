@@ -1,6 +1,7 @@
+using CLCommon.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using PrimeVision.APIEF.Models;
+using CLCommon.Models;
 
 
 namespace PrimeVision.API
@@ -26,7 +27,7 @@ namespace PrimeVision.API
                 options.AddPolicy(name: ReactSpecificOrigins,
                                        builder =>
                                        {
-                                           builder.WithOrigins("http://localhost:3000", "https://localhost:7209")
+                                           builder.WithOrigins("http://localhost:3000", "https://localhost:7209", "https://localhost:7278")
                                    .AllowAnyHeader()
                                    .AllowAnyMethod();
                                        });
