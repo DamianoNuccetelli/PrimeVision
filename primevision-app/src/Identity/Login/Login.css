@@ -9,88 +9,101 @@
 }
 
 .loginLayout{
-    width: 27%;
-    display: flex;
-    flex-direction: column;
-    color: white;
-    justify-content: center;
-    height: 92vh;
-    margin-left: 5%;
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  justify-content: center;
+  height: 92vh;
+  margin-left: 5%;
 }
 
 .loginLayout h1{
-    margin-bottom: 20px;
-    letter-spacing: 1px;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
 }
 
 .loginLayout input[type='text'],
 .loginLayout input[type='password'] {
-    width: 400px;
-    margin-bottom: 20px; 
-    border: none;
-    border-radius: 5px;
-    outline: none;
-    font-size: 16px;
-    background-color: #f4f4f4; 
-    color: #333; 
-    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1); 
-    box-sizing: border-box;
-    padding: 15px;
+  width: 100%;
+  margin-bottom: 20px; 
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  font-size: 16px;
+  background-color: #f4f4f4; 
+  color: #333; 
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1); 
+  box-sizing: border-box;
+  padding: 15px;
+}
+
+.loginLayout input[type='text']:hover,
+.loginLayout input[type='password']:hover {
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.5); 
+  background-color: #ddd;
+}
+
+
+.loginLayout input[type='text']:focus,
+.loginLayout input[type='password']:focus {
+  background-color: #fff;
+  border: 2px solid red;
 }
 
 .loginLayout input[type='submit'] {
-    width: 400px;
-    border: none;
-    border-radius: 5px;
-    background-color: rgba(255, 0, 0, 0.863); 
-    color: #fff; 
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    box-sizing: border-box; 
-    display: inline-block; 
-    padding: 15px;
-    margin: 20px 0;
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  background-color: rgba(255, 0, 0, 0.863); 
+  color: #fff; 
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-sizing: border-box; 
+  display: inline-block; 
+  padding: 15px;
+  margin: 20px 0;
 }
 
 .loginLayout input[type='submit']:hover {
-    background-color: rgba(255, 0, 0, 0.4); /* Cambia il colore quando passi sopra con il mouse */
+  background-color: rgba(255, 0, 0, 0.4); 
 }
 
 .loginLayout a {
-    color: #fff; /* colore del link */
-    text-decoration: none; /* rimuove la sottolineatura predefinita */
-    margin: 20px 0; /* aggiunge un margine sopra il link */
-    display: block; /* rende il link un blocco per occupare l'intera larghezza del suo contenitore */
-  }
-  
-  .loginLayout a:hover {
-    text-decoration: underline; /* sottolineatura quando il mouse è sopra il link */
-  }
-
-  .registerLinkContainer {
-    text-align: center;
-  }
-
-  .forgotClass{
-    text-align: center;
+  color: #fff; 
+  text-decoration: none; 
+  margin: 20px 0; 
+  display: block; 
 }
-  
-  .registerLink {
-    color: #fff;
-    text-decoration: none;
-  }
-  
-  .registerLink:hover {
-    text-decoration: underline;
-  }
-  
-  .separator {
-    width: 70%; 
-    height: 2px; 
-    background-color: #fff; 
-    margin: 0 auto; 
-    text-align: center;
+
+.loginLayout a:hover {
+  text-decoration: underline; 
+}
+
+.registerLinkContainer {
+  text-align: center;
+}
+
+.forgotClass{
+  text-align: center;
+}
+
+.registerLink {
+  color: #fff;
+  text-decoration: none;
+}
+
+.registerLink:hover {
+  text-decoration: underline;
+}
+
+.separator {
+  width: 70%; 
+  height: 2px; 
+  background-color: #fff; 
+  margin: 0 auto; 
+  text-align: center;
 }
 
 

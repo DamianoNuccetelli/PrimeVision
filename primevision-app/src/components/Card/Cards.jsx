@@ -3,6 +3,7 @@ import '../../components/Main/Main';
 import segnaposto from '../../img/segnaposto.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowAltCircleLeft, faArrowAltCircleRight } from '@fortawesome/free-solid-svg-icons';
+import './Cards.css';
 
 const defaultImage = segnaposto;
 
