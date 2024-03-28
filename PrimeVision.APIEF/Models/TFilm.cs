@@ -33,6 +33,9 @@ public partial class TFilm
     [InverseProperty("TFilms")]
     public virtual TGenere Genere { get; set; }
 
+    [StringLength(200)]
+    public string Locandina { get; set; }
+
     [InverseProperty("Film")]
     public virtual ICollection<TCronologium> TCronologia { get; set; } = new List<TCronologium>();
 
