@@ -64,7 +64,7 @@ const FilmList = () => {
                             <td>{film.titolo}</td>
                             <td>{film.durata}</td>
                             <td>{film.dataUscita}</td>
-                            <td>{film.isVietato ? '🟢' : '🔴'}</td>
+                            <td>{film.isVietato ? '🔞' : '🟢'}</td>
                             <td>{film.isPremiato ? '🟢' : '🔴'}</td>
                             <td>{getGenereName(film.genereId)}</td>
                             {/* <td>{film.locandina}</td> */}
