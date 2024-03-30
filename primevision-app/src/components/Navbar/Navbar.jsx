@@ -16,6 +16,7 @@ function Navbar() {
           <img src={logoPrimeVision} alt='logo' />
         </div>
         <div className='navbarLoginRight'>
+        <Link to="/">HOME</Link>
           <Link to="/register">REGISTRATI</Link>
         </div>
       </nav>
@@ -29,6 +30,7 @@ function Navbar() {
             <img src={logoPrimeVision} alt='logo' />
           </div>
           <div className='navbarLoginRight'>
+            <Link to="/">HOME</Link>
             <Link to="/login">LOGIN</Link>
           </div>
         </nav>
@@ -53,6 +55,7 @@ function Navbar() {
       </div>
       <div className='navbarLogin'>
         <Link to="/login">LOGIN</Link>
+        <Link to="/register">REGISTRATI</Link>
         <img src={userImage} alt='user' />
       </div>
     </nav>
