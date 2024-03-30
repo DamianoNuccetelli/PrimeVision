@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using CLCommon.Models;
+using CLCommon.Repository;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -15,23 +16,38 @@ namespace PrimeVision.APIEF.Controllers
     public class AttoreController : ControllerBase
     {
         private readonly PrimeVisionContext _context;
-        public AttoreController(PrimeVisionContext context)
+        private readonly IRepositoryAsync<TAttore> _attoreRepAsync;
+        private EntityFrameworkRepositoryAsync<TAttore> _attoreRep;
+        private readonly DbContextOptions<PrimeVisionContext> _contextOptions;
+        public AttoreController(PrimeVisionContext context, IRepositoryAsync<TAttore> attoreRepAsync, DbContextOptions<PrimeVisionContext> contextOptions)
         {
             _context = context;
+            _attoreRepAsync = attoreRepAsync;
+            _contextOptions = contextOptions;
         }
 
         // GET: api/Attore
         [HttpGet]
         public async Task<ActionResult<IEnumerable<TAttore>>> GetTAttores()
         {
-            return await _context.TAttores.ToListAsync();
+            _attoreRep = new EntityFrameworkRepositoryAsync<TAttore>(_contextOptions);
+
+            List<TAttore> listaAttori = (List<TAttore>)await _attoreRep.GetAllAsync();
+
+            return listaAttori;
+
+            //return await _context.TAttores.ToListAsync();
         }
 
         // GET: api/Attore/5
         [HttpGet("{id}")]
         public async Task<ActionResult<TAttore>> GetTAttore(int id)
         {
-            var tAttore = await _context.TAttores.FindAsync(id);
+            //var tAttore = await _context.TAttores.FindAsync(id);
+
+           _attoreRep = new EntityFrameworkRepositoryAsync<TAttore>(_contextOptions);
+
+           TAttore tAttore = await _attoreRep.GetDetailsAsync(id);
 
             if (tAttore == null)
             {
@@ -55,7 +71,9 @@ namespace PrimeVision.APIEF.Controllers
 
             try
             {
-                await _context.SaveChangesAsync();
+               // await _context.SaveChangesAsync();
+               _attoreRep = new EntityFrameworkRepositoryAsync<TAttore>(_contextOptions);
+               await _attoreRep.UpdateAsync(tAttore);
             }
             catch (DbUpdateConcurrencyException)
             {
@@ -77,10 +95,8 @@ namespace PrimeVision.APIEF.Controllers
         [HttpPost]
         public async Task<ActionResult<TAttore>> PostTAttore(TAttore tAttore)
         {
-
-            _context.TAttores.Add(tAttore);
-            await _context.SaveChangesAsync();
-
+            _attoreRep = new EntityFrameworkRepositoryAsync<TAttore>(_contextOptions);
+            await _attoreRep.AddAsync(tAttore);
             return CreatedAtAction("GetTAttore", new { id = tAttore.Id }, tAttore);
         }
 
@@ -98,14 +114,16 @@ namespace PrimeVision.APIEF.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteTAttore(int id)
         {
-            var tAttore = await _context.TAttores.FindAsync(id);
+            //var tAttore = await _context.TAttores.FindAsync(id);
+            _attoreRep = new EntityFrameworkRepositoryAsync<TAttore>(_contextOptions);
+           TAttore tAttore = await _attoreRep.GetDetailsAsync(id);
+
             if (tAttore == null)
             {
                 return NotFound();
             }
 
-            _context.TAttores.Remove(tAttore);
-            await _context.SaveChangesAsync();
+            await _attoreRep.DeleteAsync(id);
 
             return NoContent();
         }

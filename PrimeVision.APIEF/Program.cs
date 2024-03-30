@@ -2,6 +2,7 @@ using CLCommon.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using CLCommon.Models;
+using CLCommon.Repository;
 
 
 namespace PrimeVision.API
@@ -19,6 +20,16 @@ namespace PrimeVision.API
             var connectionString = builder.Configuration.GetConnectionString("PrimeVisionContextConnection") ?? throw new InvalidOperationException("Connection string 'PrimeVisionAPIContextConnection' not found.");
 
             builder.Services.AddDbContext<PrimeVisionContext>(options => options.UseSqlServer(connectionString));
+
+            builder.Services.AddScoped<IRepositoryAsync<TAttore>, EntityFrameworkRepositoryAsync<TAttore>>(
+                 serviceProvider =>
+                 {
+                     var options = serviceProvider.GetRequiredService<DbContextOptions<PrimeVisionContext>>();
+                     return new EntityFrameworkRepositoryAsync<TAttore>(options);
+                 }
+
+                );
+             
 
 
             // Add CORS
