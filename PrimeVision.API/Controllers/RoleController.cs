@@ -102,19 +102,5 @@ namespace PrimeVision.APIIdentity.Controllers
             return listRole.ToList();
         }
 
-        [HttpGet("GetAllUserAsync")]
-        public async Task<List<PrimeVisionUser>> GetAllUserAsync()
-        {
-            List<PrimeVisionUser> listUser = new List<PrimeVisionUser>();
-            try
-            {
-                listUser = await _userManager.Users.ToListAsync();
-            }
-            catch (Exception ex)
-            {
-                string sErr = ex.Message;
-            }
-            return listUser.ToList();
-        }
     }
 }
