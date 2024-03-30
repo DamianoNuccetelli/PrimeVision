@@ -102,5 +102,6 @@
     <Build Include="dbo\Stored Procedures\GetDocumentarioByTitle.sql" />
     <Build Include="dbo\Stored Procedures\GetDocumentarioByRegista.sql" />
     <Build Include="dbo\Stored Procedures\GetDocumentarioByGenere.sql" />
+    <Build Include="dbo\Stored Procedures\SearchRecords.sql" />
   </ItemGroup>
 </Project>
