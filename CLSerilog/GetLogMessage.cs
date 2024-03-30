@@ -12,7 +12,7 @@ namespace CLSerilog
     {
         public static void ConfigureLogger()
         {
-            //string logFilePath = "C:\\LOGS\\PrimeVision\\applog-.txt";
+            //string logFilePath = "C:\\Development\\LOGS\\PrimeVision\\applog-.txt";
 
             //Log.Logger = new LoggerConfiguration()
             //    .MinimumLevel.Verbose()
