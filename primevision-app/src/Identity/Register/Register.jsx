@@ -46,7 +46,7 @@ await axios.post(API_URL, {username, email, password, confirmpassword, name, add
 
       localStorage.setItem("isRegistered", response.data);
 
-      navigate("/login");
+      navigate("/EmailVerification");
     }
   })
   
@@ -64,11 +64,11 @@ await axios.post(API_URL, {username, email, password, confirmpassword, name, add
       <div className='loginLayout'>
         <h1>Registrazione</h1>
         {/* <p>Benvenuto, accedi per continuare...</p> */}
-        <input type='text' placeholder='Inserisci nome completo' onChange={(e) => setName(e.target.value)} />
         <input type='text' placeholder='Inserisci username' onChange={(e) => setUsername(e.target.value)} />
         <input type='text' placeholder='Inserisci email' onChange={(e) => setEmail(e.target.value)} />
         <input type='password' placeholder='Inserisci password' onChange={(e) => setPassword(e.target.value)} />
         <input type='password' placeholder='Conferma password' onChange={(e) => setConfirmPassword(e.target.value)} />
+        <input type='text' placeholder='Inserisci nome' onChange={(e) => setName(e.target.value)} />
         <input type='text' placeholder='Inserisci indrizzo' onChange={(e) => setAddress(e.target.value)} />
         <input type='submit' value="Registrati" onClick={handleRegister} />
         <div className='separator'></div>

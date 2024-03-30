@@ -48,6 +48,12 @@ namespace PrimeVision.API
                  options.Password.RequireNonAlphanumeric = false;
                  options.Password.RequireLowercase = false;
                  options.Password.RequiredLength = 8;
+
+                 // User settings.
+                 options.User.AllowedUserNameCharacters =
+                                 "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._@+ ";
+                 options.User.RequireUniqueEmail = true;   // NOT false;
+
              })
              .AddDefaultUI()
              .AddEntityFrameworkStores<PrimeVisionAPIContext>()
