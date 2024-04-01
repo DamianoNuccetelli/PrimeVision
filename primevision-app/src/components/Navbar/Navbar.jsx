@@ -1,65 +1,70 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import userImage from '../../img/userImage.png';
 import logoPrimeVision from '../../img/LogoPrimeVisionWithoutLines.png';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import './Navbar.css';
 
 function Navbar() {
-  const location = useLocation(); // Otteniamo la locazione corrente dalla libreria react-router-dom
-  const [showLinks, setShowLinks] = useState(true);
+    const location = useLocation();
+    const navigate = useNavigate();
+    
+    const [showLinks, setShowLinks] = useState(true);
+    const [isAuthenticated, setIsAuthenticated] = useState(false);
+    const [username, setUsername] = useState("");
 
-  // Controlliamo se siamo nella vista di login
-  if (location.pathname === '/login') {
+    useEffect(() => {
+        const loggedIn = localStorage.getItem("isAuthenticated");
+        const storedUsername = localStorage.getItem("username");
+        if (loggedIn) {
+            setIsAuthenticated(true);
+            setUsername(storedUsername);
+        } else {
+            setIsAuthenticated(false);
+            setUsername("");
+        }
+    }, []);
+
+    const handleLogout = () => {
+      localStorage.removeItem("isAuthenticated");
+      localStorage.removeItem("username");
+      setIsAuthenticated(false);
+      setUsername("");
+      navigate("/login");
+  };
+
     return (
-      <nav className='navbarClass'>
-        <div className='navbarLoginLeft'>
-          <img src={logoPrimeVision} alt='logo' />
-        </div>
-        <div className='navbarLoginRight'>
-        <Link to="/">HOME</Link>
-          <Link to="/register">REGISTRATI</Link>
-        </div>
-      </nav>
-    );
-  }
-
-    if (location.pathname === '/register') {
-      return (
         <nav className='navbarClass'>
-          <div className='navbarLoginLeft'>
-            <img src={logoPrimeVision} alt='logo' />
-          </div>
-          <div className='navbarLoginRight'>
-            <Link to="/">HOME</Link>
-            <Link to="/login">LOGIN</Link>
-          </div>
+            <div className='navbarLogo'>
+                <img src={logoPrimeVision} alt='logo' />
+            </div>
+            <div className='navbarLink'>
+                {showLinks && (
+                    <>
+                        <Link to="/">Home</Link>
+                        <Link to="/film">Film</Link>
+                        <Link to="/Serietv">Serie tv</Link>
+                        <Link to="/about">Chi siamo</Link>
+                        <Link to="/contact">Contatti</Link>
+                    </>
+                )}
+            </div>
+            <div className='navbarLogin'>
+                {isAuthenticated ? (
+                    <>
+                        <p>Bentornato, {username}!</p>
+                        <button className='logoutButton' onClick={handleLogout}>LOGOUT</button>
+                        <img src={userImage} alt='user' />
+                    </>
+                ) : (
+                    <>
+                        <Link to="/login">LOGIN</Link>
+                        <Link to="/register">REGISTRATI</Link>
+                        <img src={userImage} alt='user' />
+                    </>
+                )}
+            </div>
         </nav>
-      );
-    }
-
-  return (
-    <nav className='navbarClass'>
-      <div className='navbarLogo'>
-        <img src={logoPrimeVision} alt='logo' />
-      </div>
-      <div className='navbarLink'>
-        {showLinks && (
-          <>
-            <Link to="/">Home</Link>
-            <Link to="/film">Film</Link>
-            <Link to="/Serietv">Serie tv</Link>
-            <Link to="/about">Chi siamo</Link>
-            <Link to="/contact">Contatti</Link>
-          </>
-        )}
-      </div>
-      <div className='navbarLogin'>
-        <Link to="/login">LOGIN</Link>
-        <Link to="/register">REGISTRATI</Link>
-        <img src={userImage} alt='user' />
-      </div>
-    </nav>
-  );
+    );
 }
 
 export default Navbar;
