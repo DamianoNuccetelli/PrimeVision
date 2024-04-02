@@ -26,9 +26,9 @@ const defaultImage = segnaposto;
 //     { name: "Film15", imgURL: "https://cps-static.rovicorp.com/2/Open/Paramount%20Pictures/Program/50102204/_derived_jpg_q90_310x470_m0/PAW_Patrol_The_Mighty_Movie_PA_2x3_27_1699252296796_11.jpg" }
 // ];
 
-function Cards() {
+function Cards({ activeGenre }) {
+
     const [filmList, setFilmList] = useState([]);
-    const [genereList, setGenereList] = useState([]);
     const [startIndex, setStartIndex] = useState(0);
 
     useEffect(() => {
@@ -39,18 +39,19 @@ function Cards() {
 
                 const API_URL_GENERE = "https://localhost:7278/api/Genere";
 
-                const responseFilm = await axios.get(API_URL);
-                const responseGenere = await axios.get(API_URL_GENERE);
+                const [responseFilm, responseGenere] = await Promise.all([
+                    axios.get(API_URL),
+                    axios.get(API_URL_GENERE)
+                ]);
 
                 setFilmList(responseFilm.data);
-                setGenereList(responseGenere.data);
             } catch (error) {
                 console.error('Error fetching data:', error);
             }
         };
 
         fetchData();
-    }, []);
+    }, [activeGenre]);
 
     const handleLeftArrowClick = () => {
         setStartIndex(prevIndex => Math.max(0, prevIndex - 1));
@@ -64,17 +65,19 @@ function Cards() {
         }
     };
 
-    const visibleFilms = filmList.slice(startIndex, startIndex + 8);
+    const filteredFilms = activeGenre ? filmList.filter(film => film.genereId === activeGenre) : filmList;
+    const visibleFilms = filteredFilms.slice(startIndex, startIndex + 8);
+
 
     return (
         <div className="cardContainer">
             <FontAwesomeIcon icon={faArrowAltCircleLeft} className={startIndex === 0 ? 'arrowIcon hidden' : 'arrowIcon'} onClick={handleLeftArrowClick} />
             {visibleFilms.map((film, index) => (
                 <div key={index} className="card">
-                    <img src={film.locandina} alt={film.name} />
+                    <img src={film.locandina} alt={film.titolo} />
                 </div>
             ))}
-            <FontAwesomeIcon icon={faArrowAltCircleRight} className='arrowIcon' onClick={handleRightArrowClick} />
+            {visibleFilms.length > 7 && <FontAwesomeIcon icon={faArrowAltCircleRight} className='arrowIcon' onClick={handleRightArrowClick} />}
         </div>
     );
 }
