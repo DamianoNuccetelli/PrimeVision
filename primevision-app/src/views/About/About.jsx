@@ -4,9 +4,9 @@ import Navbar from '../../components/Navbar/Navbar';
 function About() {
   return (
     <div>
-      <div>
+      
         <Navbar />
-      </div>
+      
       <h1>
         About
       </h1>

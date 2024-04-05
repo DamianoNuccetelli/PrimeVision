@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Main.css';
 import Cards from '../Card/Cards';
 
@@ -6,6 +7,8 @@ import Cards from '../Card/Cards';
 function Main() {
 
     const [activeGenreId, setActiveGenreId] = useState(null);
+
+    const navigate = useNavigate();
 
     const handleGenreButtonClick = (genreId) => {
         setActiveGenreId(genreId);
@@ -23,11 +26,14 @@ function Main() {
                 <input type='button' value="Thriller" onClick={() => handleGenreButtonClick(12)} />
                 <input type='button' value="Animazione" onClick={() => handleGenreButtonClick(13)} />
                 <input type='button' value="Avventura" onClick={() => handleGenreButtonClick(14)} />
-                <input type='button' value="Romantico" onClick={() => handleGenreButtonClick(15)} />
+                {/* <input type='button' value="Romantico" onClick={() => handleGenreButtonClick(15)} />
                 <input type='button' value="Mistero" onClick={() => handleGenreButtonClick(16)} />
                 <input type='button' value="Biografico" onClick={() => handleGenreButtonClick(17)} />
                 <input type='button' value="Storico" onClick={() => handleGenreButtonClick(18)} />
-                <input type='button' value="Musicale" onClick={() => handleGenreButtonClick(19)} />
+                <input type='button' value="Musicale" onClick={() => handleGenreButtonClick(19)} /> */}
+            </div>
+            <div className='buttonRight'>
+                <input type='button' value="Scopri di più" onClick={() => navigate("/Film")} />
             </div>
             <div className='containerCards'>
                 <Cards activeGenre={activeGenreId}  />

@@ -7,7 +7,7 @@ import './Home.css';
 
 function Home() {
   return (
-    <div className='homeBody'>
+    <div>
       <Navbar />
       <Header />
       <Main />
