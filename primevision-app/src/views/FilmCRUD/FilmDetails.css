@@ -1,0 +1,22 @@
+/* FilmDetails.css */
+
+.container {
+    background-color: rgba(0, 0, 0, 0.8); /* Sfondo nero con trasparenza */
+    padding: 20px;
+    border-radius: 20px;
+    margin: 20px auto; /* Centrato verticalmente e orizzontalmente */
+    max-width: 600px;
+    display: flex;
+    align-items: center;
+}
+
+.details {
+    margin-left: 20px;
+    color: white;
+}
+
+.details p {
+    margin: 10px 0;
+}
+
+

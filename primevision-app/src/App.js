@@ -6,6 +6,7 @@ import About from './views/About/About';
 import FilmCRUD from './views/FilmCRUD/FilmCRUD';
 import EmailVerification from './views/EmailVerification/EmailVerification';
 import Film from './views/Film/Film';
+import FilmDetails from './views/FilmCRUD/FilmDetails';
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Register from './Identity/Register/Register';
@@ -24,6 +25,7 @@ function App() {
           <Route path="/filmCRUD" element={<FilmCRUD />} />
           <Route path="/emailverification" element={<EmailVerification />} />
           <Route path="/film" element={<Film />} />
+          <Route path="/filmCRUD/FilmDetails/:id" element={<FilmDetails />} />
         </Routes>
       </Router>
     </>

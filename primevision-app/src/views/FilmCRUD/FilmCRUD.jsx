@@ -1,5 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import Navbar from '../../components/Navbar/Navbar';
 import './FilmCRUD.css';
 
 const FilmList = () => {
@@ -31,14 +33,40 @@ const FilmList = () => {
         const genere = genereList.find(genere => genere.id === genereId);
         return genere ? genere.nome : 'Sconosciuto';
     };
-
+    //Inutilizzata per il momento
     const booleanToString = (value) => {
         return value ? 'V' : 'X';
     };
 
+    const handleDetails = (id) => {
+        console.log('Details:', id);
+
+    };
+
+    const handleEdit = (id) => {
+        console.log('Edit:', id);
+    }
+
+    const handleDelete = async (id) => {
+        try {
+            const urlRootAPI = "https://localhost:7278/api/";
+            const API_URL = urlRootAPI + "film/" + id;
+
+            await axios.delete(API_URL);
+
+            setFilmList(filmList.filter(film => film.id !== id));
+        } catch (error) {
+            console.error('Errore nella cancellazione del record:', error);
+        }
+    };
+
+
     return (
         <div>
-            <h1>Film</h1>
+            <div>
+                <Navbar />
+            </div>
+            <h1> Film </h1>
             <table>
                 <thead>
                     <tr>
@@ -50,6 +78,7 @@ const FilmList = () => {
                         <th>Premiato</th>
                         <th>GenereID</th>
                         <th>Locandina</th>
+                        <th>Azioni</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -62,7 +91,14 @@ const FilmList = () => {
                             <td>{film.isVietato ? '🔞' : '🟢'}</td>
                             <td>{film.isPremiato ? '🟢' : '🔴'}</td>
                             <td>{getGenereName(film.genereId)}</td>
-                            <td><img src={film.locandina} alt="Locandina" style={{width: '100px'}} /></td>
+                            <td><img src={film.locandina} alt="Locandina" style={{ width: '100px' }} /></td>
+                            <td>
+                                <button onClick={() => handleDetails(film.id)}>
+                                    <Link to={`/filmCRUD/FilmDetails/${film.id}`}>Details</Link>
+                                </button>
+                                <button onClick={() => handleEdit(film.id)}>Edit</button>
+                                <button onClick={() => handleDelete(film.id)}>Delete</button>
+                            </td>
                         </tr>
                     ))}
                 </tbody>
