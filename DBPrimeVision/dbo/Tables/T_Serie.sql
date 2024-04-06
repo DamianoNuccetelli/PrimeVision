@@ -6,7 +6,10 @@
     [IsVietato]  BIT            NULL,
     [IsPremiato] BIT            NULL,
     [GenereID]   INT            NULL,
+    [Locandina]  NVARCHAR (200) NULL,
     CONSTRAINT [PK_T_Serie] PRIMARY KEY CLUSTERED ([ID] ASC),
     CONSTRAINT [FK_T_Serie_T_Genere] FOREIGN KEY ([GenereID]) REFERENCES [dbo].[T_Genere] ([ID])
 );
+
+
 
