@@ -1,0 +1,90 @@
+.container {
+    background-color: rgba(0, 0, 0, 0.8); /* Sfondo nero con trasparenza */
+    padding: 20px;
+    border-radius: 20px;
+    margin: 10% auto; /* Centrato verticalmente e orizzontalmente */
+    max-width: 750px;
+    display: flex;
+    align-items: stretch;
+    font-size: 18px;
+    height: 600px; /* Altezza del rettangolo */
+    width: auto; /* Larghezza automatica */
+}
+
+.details {
+    margin-left: 20px;
+    color: white;
+}
+
+.details p {
+    margin: 10px 0;
+}
+
+.goback.button {
+    font-size: 18px;
+    background-color: goldenrod; /* Sfondo trasparente */
+    border: 2px solid goldenrod; /* Bordo dorato */
+    color: rgb(0, 0, 0); /* Testo nero */
+    cursor: pointer; /* Cambia il cursore al passaggio sopra il pulsante */
+    padding: 8px 16px; /* Padding orizzontale e verticale */
+    border-radius: 20px;
+    margin-top: 20px; /* Spazio superiore */
+    margin-bottom: 10px; /* Spazio inferiore */
+    margin-top: 5px;
+}
+
+.button-salva {
+    font-size: 18px;
+    background-color: darkgreen; /* Sfondo verde scuro */
+    border: 2px solid darkgreen; /* Bordo verde scuro */
+    color: white; /* Testo bianco */
+    cursor: pointer; /* Cambia il cursore al passaggio sopra il pulsante */
+    padding: 8px 16px; /* Padding orizzontale e verticale */
+    border-radius: 20px; /* Angoli arrotondati */
+    width: 150px;
+    margin-bottom: 10px; /* Spazio inferiore */
+}
+
+.salva-visualizza-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px; /* Aggiungi spazio sopra */
+}
+
+select {
+    font-size: 16px;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    background-color: #f8f8f8;
+    color: #333;
+    cursor: pointer;
+}
+
+select:focus {
+    outline: none;
+    border-color: #4d90fe;
+    box-shadow: 0 0 5px rgba(77, 144, 254, 0.5);
+}
+
+.input-field {
+    font-size: 16px;
+    padding: 6px 12px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    background-color: #f8f8f8;
+    color: #333;
+    margin-bottom: 10px;
+    width: 80%;
+    
+}
+
+.checkbox-field {
+    margin-bottom: 10px;
+}
+
+.input-field-select {
+    display: block; /* Imposta la combobox su una nuova riga */
+    margin-top: 5px; /* Aggiunge uno spazio superiore */
+    width: 88%;
+}

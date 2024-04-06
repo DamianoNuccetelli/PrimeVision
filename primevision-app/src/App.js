@@ -13,6 +13,8 @@ import FilmCreate from './views/FilmCRUD/FilmCreate';
 
 import SerieCRUD from './views/SerieCRUD/SerieCRUD';
 import SerieCreate from './views/SerieCRUD/SerieCreate';
+import SerieDetails from './views/SerieCRUD/SerieDetails';
+import SerieEdit from './views/SerieCRUD/SerieEdit';
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Register from './Identity/Register/Register';
@@ -36,6 +38,8 @@ function App() {
           <Route path="/filmCRUD/FilmCreate/" element={<FilmCreate />} /> 
           <Route path="/serieCRUD" element={<SerieCRUD />} />
           <Route path="/serieCRUD/SerieCreate/" element={<SerieCreate />} />
+          <Route path="/serieCRUD/SerieDetails/:id" element={<SerieDetails />} />
+          <Route path="/serieCRUD/SerieEdit/:id" element={<SerieEdit />} />
         </Routes>
       </Router>
     </>
