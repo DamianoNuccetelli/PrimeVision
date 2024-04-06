@@ -4,10 +4,11 @@
     background-color: rgba(0, 0, 0, 0.8); /* Sfondo nero con trasparenza */
     padding: 20px;
     border-radius: 20px;
-    margin: 20px auto; /* Centrato verticalmente e orizzontalmente */
+    margin: 10% auto; /* Centrato verticalmente e orizzontalmente */
     max-width: 600px;
     display: flex;
-    align-items: center;
+    align-items: stretch;
+    font-size: 18px;
 }
 
 .details {
@@ -17,6 +18,17 @@
 
 .details p {
     margin: 10px 0;
+}
+
+.goback.button {
+    font-size: 18px;
+    background-color: goldenrod; /* Sfondo trasparente */
+    border: none; /* Rimuove il bordo */
+    color: rgb(0, 0, 0); /* Testo bianco */
+    cursor: pointer; /* Cambia il cursore al passaggio sopra il pulsante */
+    padding: 10%;
+    border-radius: 20px;
+    margin-top: 80px;
 }
 
 

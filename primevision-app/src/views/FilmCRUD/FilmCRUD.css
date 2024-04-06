@@ -54,9 +54,11 @@ table button {
   border: none; /* Rimuove il bordo */
   color: white; /* Testo bianco */
   cursor: pointer; /* Cambia il cursore al passaggio sopra il pulsante */
+  font-size: 14px;
 }
 
 /* Stile per i pulsanti al passaggio del mouse */
 table button:hover {
   background-color: rgba(255, 255, 255, 0.1); /* Sfondo trasparente più chiaro */
+  
 }

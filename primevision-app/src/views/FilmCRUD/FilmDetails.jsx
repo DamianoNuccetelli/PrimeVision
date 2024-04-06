@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
+import Navbar from '../../components/Navbar/Navbar';
+import { Link } from 'react-router-dom';
+
 import './FilmDetails.css';
 
 const FilmDetails = () => {
@@ -38,7 +41,10 @@ const FilmDetails = () => {
 
     return (
         <div className="container">
-            <img src={film.locandina} alt="Locandina" style={{ width: '300px' }} />
+            <div>
+                <Navbar />
+            </div>
+            <img src={film.locandina} alt="Locandina" style={{ width: '350px' }} />
             <div className="details">
                 <h2>{film.titolo}</h2>
                 <p>Durata: {film.durata}</p>
@@ -46,6 +52,9 @@ const FilmDetails = () => {
                 <p>Vietato: {film.isVietato ? '🔞' : '🟢'}</p>
                 <p>Premiato: {film.isPremiato ? '🟢' : '🔴'}</p>
                 <p>Genere: {getGenereName(film.genereId)}</p>
+                <Link to="/filmCRUD">
+                    <button className="goback button">Visualizza tutti</button>
+                </Link>
             </div>
         </div>
     );

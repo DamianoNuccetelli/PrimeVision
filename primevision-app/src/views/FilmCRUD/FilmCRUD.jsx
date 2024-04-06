@@ -40,21 +40,25 @@ const FilmList = () => {
 
     const handleDetails = (id) => {
         console.log('Details:', id);
-
     };
 
     const handleEdit = (id) => {
-        console.log('Edit:', id);
+        
     }
 
     const handleDelete = async (id) => {
         try {
-            const urlRootAPI = "https://localhost:7278/api/";
-            const API_URL = urlRootAPI + "film/" + id;
-
-            await axios.delete(API_URL);
-
-            setFilmList(filmList.filter(film => film.id !== id));
+            // Chiedi conferma prima di procedere con l'eliminazione
+            const confirmed = window.confirm("Sei sicuro di voler cancellare questo record?");
+            
+            if (confirmed) {
+                const urlRootAPI = "https://localhost:7278/api/";
+                const API_URL = urlRootAPI + "film/" + id;
+    
+                await axios.delete(API_URL);
+    
+                setFilmList(filmList.filter(film => film.id !== id));
+            }
         } catch (error) {
             console.error('Errore nella cancellazione del record:', error);
         }
@@ -69,7 +73,7 @@ const FilmList = () => {
             <h1> Film </h1>
             <table>
                 <thead>
-                    <tr>
+                    <tr >
                         <th>ID</th>
                         <th>Titolo</th>
                         <th>Durata</th>
@@ -96,8 +100,10 @@ const FilmList = () => {
                                 <button onClick={() => handleDetails(film.id)}>
                                     <Link to={`/filmCRUD/FilmDetails/${film.id}`}>Details</Link>
                                 </button>
-                                <button onClick={() => handleEdit(film.id)}>Edit</button>
-                                <button onClick={() => handleDelete(film.id)}>Delete</button>
+                                <button onClick={() => handleEdit(film.id)}>
+                                    <Link to={`/filmCRUD/FilmEdit/${film.id}`}>Edit</Link>
+                                </button>
+                                <button onClick={() => handleDelete(film.id)} style={{ color: 'red' }}>Delete</button>
                             </td>
                         </tr>
                     ))}
