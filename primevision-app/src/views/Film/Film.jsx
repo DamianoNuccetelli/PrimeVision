@@ -7,7 +7,7 @@ import './Film.css';
 function Film() {
   return (
     <div>
-      <div>
+      <div className='filmBody'>
         <Navbar />
       </div>
       <div>

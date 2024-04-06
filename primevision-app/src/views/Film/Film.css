@@ -1,0 +1,9 @@
+.filmBody {
+  width: 100%;
+  height: 100vh;
+  background-image: url('../../img/provaHomepageFilm.jpg');
+  background-size: 100% 100vh;
+  background-position: top center;
+  background-repeat: no-repeat;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.8);
+}

@@ -49,7 +49,7 @@ function Header() {
             <div className='headerClass'>
                 <h1>{currentBackground.title}</h1>
                 <p>{currentBackground.description}</p>
-                <input type='button' value="Vai alla serie" />
+                <input type='button' value="Vai al contenuto" />
             </div>
         </div>
     );
