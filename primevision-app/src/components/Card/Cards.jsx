@@ -68,7 +68,6 @@ function Cards({ activeGenre }) {
     const filteredFilms = activeGenre ? filmList.filter(film => film.genereId === activeGenre) : filmList;
     const visibleFilms = filteredFilms.slice(startIndex, startIndex + 8);
 
-
     return (
         <div className="cardContainer">
             <FontAwesomeIcon icon={faArrowAltCircleLeft} className={startIndex === 0 ? 'arrowIcon hidden' : 'arrowIcon'} onClick={handleLeftArrowClick} />
