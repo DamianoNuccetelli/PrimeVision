@@ -11,7 +11,12 @@
     left: 0;
     width: 100%;
     z-index: 1; 
+    transition: background-color 0.6s ease;
 }
+
+.navbarClass:hover {
+    background-color: rgba(0, 0, 0, 0.8); 
+  }
 
 .navbarLink{
     width: 50%;
