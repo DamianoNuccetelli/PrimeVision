@@ -33,18 +33,10 @@ const FilmList = () => {
         const genere = genereList.find(genere => genere.id === genereId);
         return genere ? genere.nome : 'Sconosciuto';
     };
-    //Inutilizzata per il momento
-    const booleanToString = (value) => {
-        return value ? 'V' : 'X';
-    };
-
+    
     const handleDetails = (id) => {
         console.log('Details:', id);
     };
-
-    const handleEdit = (id) => {
-        
-    }
 
     const handleDelete = async (id) => {
         try {
@@ -63,7 +55,6 @@ const FilmList = () => {
             console.error('Errore nella cancellazione del record:', error);
         }
     };
-
 
     return (
         <div>
@@ -100,8 +91,11 @@ const FilmList = () => {
                                 <button onClick={() => handleDetails(film.id)}>
                                     <Link to={`/filmCRUD/FilmDetails/${film.id}`}>Details</Link>
                                 </button>
-                                <button onClick={() => handleEdit(film.id)}>
+                                <button >
                                     <Link to={`/filmCRUD/FilmEdit/${film.id}`}>Edit</Link>
+                                </button>
+                                <button>
+                                    <Link to={`/filmCRUD/FilmCreate/`}  style={{ color: 'green' }}>Create</Link>
                                 </button>
                                 <button onClick={() => handleDelete(film.id)} style={{ color: 'red' }}>Delete</button>
                             </td>

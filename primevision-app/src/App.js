@@ -11,6 +11,7 @@ import FilmEdit from './views/FilmCRUD/FilmEdit';
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Register from './Identity/Register/Register';
+import FilmCreate from './views/FilmCRUD/FilmCreate';
 
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
           <Route path="/film" element={<Film />} />
           <Route path="/filmCRUD/FilmDetails/:id" element={<FilmDetails />} />
           <Route path="/filmCRUD/FilmEdit/:id" element={<FilmEdit />} /> 
+          <Route path="/filmCRUD/FilmCreate/" element={<FilmCreate />} /> 
         </Routes>
       </Router>
     </>
