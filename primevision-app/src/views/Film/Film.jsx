@@ -14,6 +14,8 @@ function Film() {
         <Navbar />
       </div>
       <div className='filmContainer'>
+        <h1>Solo su Prime Vision</h1>
+        <h3>Prime Vision produce una straordinaria programmazione originale che non troverai da nessun'altra parte. <br />Film, serie TV, speciali e molto di più... su misura per te.</h3>
         <h2>Tutti i generi</h2>
         <Cards />
         <h2>Action</h2>
@@ -40,7 +42,7 @@ function Film() {
         <Cards activeGenre={16} />
         <h2>Biografico</h2>
         <Cards activeGenre={17} />
-        <h2>Storico</h2> Ancora non abbiamo film di genere musicale
+        <h2>Storico</h2> Ancora non abbiamo film di genere storico
         <Cards activeGenre={18} />
         <h2>Musicale</h2>
         <Cards activeGenre={19} />

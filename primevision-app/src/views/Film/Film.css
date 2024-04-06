@@ -7,13 +7,17 @@
   background-repeat: no-repeat;
 }
 
-
-
 .filmContainer{
   box-sizing: border-box;
   margin: 0;
-  padding: 5% 3% 1% 3%;
+  padding: 3% 3% 1% 3%;
   color: #fff;
+  text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.7);
+}
+
+.filmContainer h1{
+  font-size: 3em;
+  text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.7);
 }
 
 .filmBody .card {
