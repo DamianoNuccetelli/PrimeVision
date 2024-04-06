@@ -2,24 +2,24 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from '../../components/Navbar/Navbar';
-import './FilmCRUD.css';
+import './SerieCRUD.css';
 
-const FilmList = () => {
-    const [filmList, setFilmList] = useState([]);
+const SerieList = () => {
+    const [SerieList, setSerieList] = useState([]);
     const [genereList, setGenereList] = useState([]);
 
     useEffect(() => {
         const fetchData = async () => {
             try {
                 const urlRootAPI = "https://localhost:7278/api/";
-                const API_URL = urlRootAPI + "film";
+                const API_URL = urlRootAPI + "serie";
 
                 const API_URL_GENERE = "https://localhost:7278/api/Genere";
 
-                const responseFilm = await axios.get(API_URL);
+                const responseSerie = await axios.get(API_URL);
                 const responseGenere = await axios.get(API_URL_GENERE);
 
-                setFilmList(responseFilm.data);
+                setSerieList(responseSerie.data);
                 setGenereList(responseGenere.data);
             } catch (error) {
                 console.error('Error fetching data:', error);
@@ -45,11 +45,11 @@ const FilmList = () => {
             
             if (confirmed) {
                 const urlRootAPI = "https://localhost:7278/api/";
-                const API_URL = urlRootAPI + "film/" + id;
+                const API_URL = urlRootAPI + "Serie/" + id;
     
                 await axios.delete(API_URL);
     
-                setFilmList(filmList.filter(film => film.id !== id));
+                setSerieList(SerieList.filter(serie => serie.id !== id));
             }
         } catch (error) {
             console.error('Errore nella cancellazione del record:', error);
@@ -61,13 +61,13 @@ const FilmList = () => {
             <div>
                 <Navbar />
             </div>
-            <h1> Film </h1>
+            <h1> Serie </h1>
             <table>
                 <thead>
                     <tr >
                         <th>ID</th>
                         <th>Titolo</th>
-                        <th>Durata</th>
+                        <th>Stagioni</th>
                         <th>Data Uscita</th>
                         <th>Vietato</th>
                         <th>Premiato</th>
@@ -77,27 +77,27 @@ const FilmList = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {filmList.map((film) => (
-                        <tr key={film.id}>
-                            <td>{film.id}</td>
-                            <td>{film.titolo}</td>
-                            <td>{film.durata}</td>
-                            <td>{film.dataUscita}</td>
-                            <td>{film.isVietato ? '🔞' : '🟢'}</td>
-                            <td>{film.isPremiato ? '🟢' : '🔴'}</td>
-                            <td>{getGenereName(film.genereId)}</td>
-                            <td><img src={film.locandina} alt="Locandina" style={{ width: '100px' }} /></td>
+                    {SerieList.map((Serie) => (
+                        <tr key={Serie.id}>
+                            <td>{Serie.id}</td>
+                            <td>{Serie.titolo}</td>
+                            <td>{Serie.stagioni}</td>
+                            <td>{Serie.dataUscita}</td>
+                            <td>{Serie.isVietato ? '🔞' : '🟢'}</td>
+                            <td>{Serie.isPremiato ? '🟢' : '🔴'}</td>
+                            <td>{getGenereName(Serie.genereId)}</td>
+                            <td><img src={Serie.locandina} alt="Locandina" style={{ width: '100px' }} /></td>
                             <td>
-                                <button onClick={() => handleDetails(film.id)}>
-                                    <Link to={`/filmCRUD/FilmDetails/${film.id}`}>Details</Link>
+                                <button onClick={() => handleDetails(Serie.id)}>
+                                    <Link to={`/SerieCRUD/SerieDetails/${Serie.id}`}>Details</Link>
                                 </button>
                                 <button >
-                                    <Link to={`/filmCRUD/FilmEdit/${film.id}`}>Edit</Link>
+                                    <Link to={`/SerieCRUD/SerieEdit/${Serie.id}`}>Edit</Link>
                                 </button>
                                 <button>
-                                    <Link to={`/filmCRUD/FilmCreate/`}  style={{ color: 'green' }}>Create</Link>
+                                    <Link to={`/SerieCRUD/SerieCreate/`}  style={{ color: 'green' }}>Create</Link>
                                 </button>
-                                <button onClick={() => handleDelete(film.id)} style={{ color: 'red' }}>Delete</button>
+                                <button onClick={() => handleDelete(Serie.id)} style={{ color: 'red' }}>Delete</button>
                             </td>
                         </tr>
                     ))}
@@ -107,4 +107,4 @@ const FilmList = () => {
     );
 };
 
-export default FilmList;
+export default SerieList;

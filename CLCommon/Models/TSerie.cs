@@ -30,6 +30,9 @@ public partial class TSerie
     [Column("GenereID")]
     public int? GenereId { get; set; }
 
+    [StringLength(200)]
+    public string Locandina { get; set; }
+
     [ForeignKey("GenereId")]
     [InverseProperty("TSeries")]
     public virtual TGenere Genere { get; set; }
