@@ -2,6 +2,8 @@ using CLCommon.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using CLCommon.Repository;
+using Microsoft.Extensions.DependencyInjection;
+using PrimeVision.APIEF.Data;
 
 
 namespace PrimeVision.API
@@ -14,6 +16,10 @@ namespace PrimeVision.API
             var ReactSpecificOrigins = "enablecorsPrimeVision";
 
             var builder = WebApplication.CreateBuilder(args);
+            // Add CORS
+            builder.Services.AddDbContext<PrimeVisionAPIEFContext>(options =>
+            // Add CORS
+                options.UseSqlServer(builder.Configuration.GetConnectionString("PrimeVisionAPIEFContext") ?? throw new InvalidOperationException("Connection string 'PrimeVisionAPIEFContext' not found.")));
 
 
             var connectionString = builder.Configuration.GetConnectionString("PrimeVisionContextConnection") ?? throw new InvalidOperationException("Connection string 'PrimeVisionAPIContextConnection' not found.");
@@ -28,7 +34,7 @@ namespace PrimeVision.API
                  }
 
                 );
-             
+
 
 
             // Add CORS

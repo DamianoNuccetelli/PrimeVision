@@ -1,0 +1,49 @@
+/* FilmDetails.css */
+
+.container {
+    background-color: rgba(0, 0, 0, 0.8); /* Sfondo nero con trasparenza */
+    padding: 20px;
+    border-radius: 20px;
+    margin: 10% auto; /* Centrato verticalmente e orizzontalmente */
+    max-width: 750px;
+    display: flex;
+    align-items: stretch;
+    font-size: 18px;
+}
+
+.details {
+    margin-left: 20px;
+    color: white;
+}
+
+.details p {
+    margin: 10px 0;
+}
+
+.goback.button {
+    font-size: 18px;
+    background-color: goldenrod; /* Sfondo trasparente */
+    border: none; /* Rimuove il bordo */
+    color: rgb(0, 0, 0); /* Testo bianco */
+    cursor: pointer; /* Cambia il cursore al passaggio sopra il pulsante */
+    padding: 10%;
+    border-radius: 20px;
+    margin-top: 80px;
+}
+
+.red-title {
+    color: red;
+}
+
+.red-text {
+    color: red;
+}
+.custom-span {
+    border-radius: 4px; /* Angoli smussati */
+    padding: 2px 6px; /* Padding per renderlo leggermente più corto di larghezza */
+    font-weight: lighter; /* Rende il testo più leggero */
+    font-size: 0.9em; /* Riduce leggermente la dimensione del testo */
+    line-height: 1; /* Imposta l'altezza della riga uguale all'altezza del font */
+    max-width: 80%;
+}
+

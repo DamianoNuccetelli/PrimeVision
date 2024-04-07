@@ -16,6 +16,11 @@ import SerieCreate from './views/SerieCRUD/SerieCreate';
 import SerieDetails from './views/SerieCRUD/SerieDetails';
 import SerieEdit from './views/SerieCRUD/SerieEdit';
 
+import StagioniCrud from './views/StagioniSerieCRUD/StagioniCRUD';
+import StagioniEdit from './views/StagioniSerieCRUD/StagioniEdit';
+import StagioniCreate from './views/StagioniSerieCRUD/StagioniCreate';
+import StagioniDetails from './views/StagioniSerieCRUD/StagioniDetails';
+
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Register from './Identity/Register/Register';
 
@@ -40,6 +45,10 @@ function App() {
           <Route path="/serieCRUD/SerieCreate/" element={<SerieCreate />} />
           <Route path="/serieCRUD/SerieDetails/:id" element={<SerieDetails />} />
           <Route path="/serieCRUD/SerieEdit/:id" element={<SerieEdit />} />
+          <Route path="/stagioniCRUD" element={<StagioniCrud />} />
+          <Route path="/stagioniCRUD/StagioniCreate/" element={<StagioniCreate />} />
+          <Route path="/stagioniCRUD/StagioniDetails/:id" element={<StagioniDetails />} />
+          <Route path="/stagioniCRUD/StagioniEdit/:id" element={<StagioniEdit />} />
         </Routes>
       </Router>
     </>
