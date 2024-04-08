@@ -42,7 +42,7 @@ function Navbar() {
                     <>
                         <Link to="/">Home</Link>
                         <Link to="/film">Film</Link>
-                        <Link to="/Serietv">Serie tv</Link>
+                        <Link to="/Serie">Serie tv</Link>
                         <Link to="/about">Chi siamo</Link>
                         <Link to="/contact">Contatti</Link>
                     </>

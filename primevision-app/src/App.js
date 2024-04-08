@@ -11,6 +11,7 @@ import FilmDetails from './views/FilmCRUD/FilmDetails';
 import FilmEdit from './views/FilmCRUD/FilmEdit';
 import FilmCreate from './views/FilmCRUD/FilmCreate';
 
+import Serie from './views/Serie/Serie';
 import SerieCRUD from './views/SerieCRUD/SerieCRUD';
 import SerieCreate from './views/SerieCRUD/SerieCreate';
 import SerieDetails from './views/SerieCRUD/SerieDetails';
@@ -38,6 +39,7 @@ function App() {
           <Route path="/filmCRUD" element={<FilmCRUD />} />
           <Route path="/emailverification" element={<EmailVerification />} />
           <Route path="/film" element={<Film />} />
+          <Route path="/serie" element={<Serie />} />
           <Route path="/filmCRUD/FilmDetails/:id" element={<FilmDetails />} />
           <Route path="/filmCRUD/FilmEdit/:id" element={<FilmEdit />} /> 
           <Route path="/filmCRUD/FilmCreate/" element={<FilmCreate />} /> 

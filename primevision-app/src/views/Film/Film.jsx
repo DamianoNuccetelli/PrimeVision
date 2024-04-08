@@ -42,13 +42,10 @@ function Film() {
         <Cards activeGenre={16} />
         <h2>Biografico</h2>
         <Cards activeGenre={17} />
-        <h2>Storico</h2> Ancora non abbiamo film di genere storico
+        {/* <h2>Storico</h2> Ancora non abbiamo film di genere storico */}
         <Cards activeGenre={18} />
         <h2>Musicale</h2>
         <Cards activeGenre={19} />
-      </div>
-      <div className='filmContainer'>
-
       </div>
     </div>
   );
