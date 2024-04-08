@@ -1,0 +1,82 @@
+.container {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 20px;
+    margin: 10% auto;
+    max-width: fit-content; /* Imposta la larghezza al minimo necessario */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    height: auto;
+    width: auto;
+}
+
+.details {
+    color: white;
+}
+
+.details p {
+    margin: 10px 0;
+    text-align: center;
+}
+
+.goback-button,
+.button-salva {
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 20px;
+    margin: 10px;
+    width: 150px;
+    text-align: center;
+    width: 50%;
+}
+
+.goback-button {
+    background-color: goldenrod;
+    color: black;
+}
+
+.button-salva {
+    background-color: darkgreen;
+    color: white;
+}
+
+.select-field {
+    font-size: 16px;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    background-color: #f8f8f8;
+    color: #333;
+    cursor: pointer;
+}
+
+.select-field:focus {
+    outline: none;
+    border-color: #4d90fe;
+    box-shadow: 0 0 5px rgba(77, 144, 254, 0.5);
+}
+
+.input-field {
+    font-size: 16px;
+    padding: 6px 12px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    background-color: #f8f8f8;
+    color: #333;
+    margin-bottom: 10px;
+    width: 80%;
+}
+
+.checkbox-field {
+    margin-bottom: 10px;
+}
+
+.input-field-select {
+    display: block;
+    margin-top: 5px;
+    width: 88%;
+}
