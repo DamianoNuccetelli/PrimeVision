@@ -1,0 +1,65 @@
+/* FilmCRUD.css */
+
+/* Stile per la tabella */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    background-color: rgba(0, 0, 0, 0.8); /* Sfondo nero con trasparenza */
+    color: white; /* Testo bianco */
+  }
+  
+  /* Stile per le celle dell'intestazione */
+  table th {
+    background-color: rgba(0, 0, 0, 0.8); /* Sfondo scuro */
+    color: white; /* Testo bianco */
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  /* Stile per le celle dei dati */
+  table td {
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  table th,
+  table td {
+    font-size: 24px; /* Dimensione del testo aumentata a 16px */
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  /* Stile per le righe pari */
+  table tr:nth-child(even) {
+    background-color: rgba(0, 0, 0, 0.5); /* Sfondo nero trasparente più scuro */
+  }
+  
+  /* Stile per il link "Details" */
+  table a {
+    color: white; /* Testo bianco */
+    text-decoration: none; /* Rimuove il sottolineato */
+  }
+  
+  /* Stile per l'icona del bottone "Details" */
+  table a:before {
+    content: '\1F441'; /* Icona dello sguardo */
+    padding-right: 5px; /* Spazio tra l'icona e il testo */
+  }
+  
+  /* Stile per i pulsanti */
+  table button {
+    background-color: transparent; /* Sfondo trasparente */
+    border: none; /* Rimuove il bordo */
+    color: white; /* Testo bianco */
+    cursor: pointer; /* Cambia il cursore al passaggio sopra il pulsante */
+    font-size: 14px;
+  }
+  
+  /* Stile per i pulsanti al passaggio del mouse */
+  table button:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Sfondo trasparente più chiaro */
+    
+  }
+  

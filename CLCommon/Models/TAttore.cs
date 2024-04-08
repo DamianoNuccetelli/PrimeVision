@@ -29,6 +29,9 @@ public partial class TAttore
 
     public bool? IsPremiato { get; set; }
 
+    [StringLength(200)]
+    public string Foto { get; set; }
+
     [InverseProperty("Attore")]
     public virtual ICollection<TRelAttoreOpera> TRelAttoreOperas { get; set; } = new List<TRelAttoreOpera>();
 }
