@@ -1,34 +1,24 @@
-/* FilmDetails.css */
-
 .container {
-    background-color: rgba(0, 0, 0, 0.8); /* Sfondo nero con trasparenza */
+    background-color: rgba(0, 0, 0, 0.8);
     padding: 20px;
     border-radius: 20px;
-    margin: 10% auto; /* Centrato verticalmente e orizzontalmente */
+    margin: 10% auto;
     max-width: 750px;
     display: flex;
-    align-items: stretch;
+    align-items: flex-start;
+    justify-content: center; 
     font-size: 18px;
 }
 
 .details {
     margin-left: 20px;
     color: white;
+    text-align: left; /* Aggiunta per allineare il testo a sinistra */
 }
 
 .details p {
     margin: 10px 0;
-}
-
-.goback.button {
-    font-size: 18px;
-    background-color: goldenrod; /* Sfondo trasparente */
-    border: none; /* Rimuove il bordo */
-    color: rgb(0, 0, 0); /* Testo bianco */
-    cursor: pointer; /* Cambia il cursore al passaggio sopra il pulsante */
-    padding: 10%;
-    border-radius: 20px;
-    margin-top: 80px;
+    text-align: left; /* Aggiunta per allineare il testo a sinistra */
 }
 
 .red-title {
@@ -39,11 +29,10 @@
     color: red;
 }
 .custom-span {
-    border-radius: 4px; /* Angoli smussati */
-    padding: 2px 6px; /* Padding per renderlo leggermente più corto di larghezza */
-    font-weight: lighter; /* Rende il testo più leggero */
-    font-size: 0.9em; /* Riduce leggermente la dimensione del testo */
-    line-height: 1; /* Imposta l'altezza della riga uguale all'altezza del font */
+    border-radius: 4px;
+    padding: 2px 6px;
+    font-weight: lighter;
+    font-size: 0.9em;
+    line-height: 1;
     max-width: 80%;
 }
-

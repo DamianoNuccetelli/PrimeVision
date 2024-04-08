@@ -65,6 +65,7 @@ const StagioniDetails = () => {
             <img src={getLocandinaFromSerie(Stagione.serieId)} alt="Locandina" style={{ width: '350px' }} />
             <div className="details">
                 <h2 className='red-title'>{getSeriesName(Stagione.serieId)}</h2>
+                <br />
                 <p>
                     <span className="red-text">Stagione:</span> {Stagione.numeroStagione}
                 </p>
