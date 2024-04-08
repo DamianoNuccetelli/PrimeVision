@@ -20,7 +20,8 @@ function Cards({ activeGenre, showSeriesOnly }) {
                 const API_URL = `${urlRootAPI}${endpoint}`;
 
                 const response = await axios.get(API_URL);
-                setDataList(response.data);
+                const shuffledData = response.data.sort(() => Math.random() - 0.5); // Shuffle the data array
+                setDataList(shuffledData);
             } catch (error) {
                 console.error('Error fetching data:', error);
             }

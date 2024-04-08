@@ -14,7 +14,7 @@ function Serie() {
         <Navbar />
       </div>
       <div className='serieContainer'>
-        <h1>Solo su Prime Vision</h1>
+        <h1>Solo su Prime Vision le migliori serie</h1>
         <h3>Prime Vision produce una straordinaria programmazione originale che non troverai da nessun'altra parte. <br />Film, serie TV, speciali e molto di più... su misura per te.</h3>
         <h2>Tutti i generi</h2>
         <Cards showSeriesOnly={true} />
