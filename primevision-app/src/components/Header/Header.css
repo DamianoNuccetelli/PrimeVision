@@ -35,5 +35,5 @@
 }
 
 .headerClass input[type='button']:hover {
-    background-color: rgba(255, 0, 0, 0.4); /* Cambia il colore quando passi sopra con il mouse */
+    background-color: rgba(255, 0, 0, 0.4); 
 }

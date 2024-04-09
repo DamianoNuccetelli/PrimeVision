@@ -1,55 +1,43 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Navbar from '../../components/Navbar/Navbar';
 import Cards from '../../components/Card/Cards';
-
+import axios from 'axios';
 import './Film.css';
 
-
 function Film() {
+    const [genereList, setGenereList] = useState([]);
 
-  
-  return (
-    <div className='filmBody'>
-      <div>
-        <Navbar />
-      </div>
-      <div className='filmContainer'>
-        <h1>Solo su Prime Vision i migliori film</h1>
-        <h3>Prime Vision produce una straordinaria programmazione originale che non troverai da nessun'altra parte. <br />Film, serie TV, speciali e molto di più... su misura per te.</h3>
-        <h2>Tutti i generi</h2>
-        <Cards />
-        <h2>Action</h2>
-        <Cards activeGenre={6} />
-        <h2>Commedia</h2>
-        <Cards activeGenre={7} />
-        <h2>Drammatico</h2>
-        <Cards activeGenre={8} />
-        <h2>Horror</h2>
-        <Cards activeGenre={9} />
-        <h2>Fantasy</h2>
-        <Cards activeGenre={10} />
-        <h2>Fantascienza</h2>
-        <Cards activeGenre={11} />
-        <h2>Thriller</h2>
-        <Cards activeGenre={12} />
-        <h2>Animazione</h2>
-        <Cards activeGenre={13} />
-        <h2>Avventura</h2>
-        <Cards activeGenre={14} />
-        <h2>Romantico</h2>
-        <Cards activeGenre={15} />
-        <h2>Mistero</h2>
-        <Cards activeGenre={16} />
-        <h2>Biografico</h2>
-        <Cards activeGenre={17} />
-        <h2>Storico</h2>
-        <Cards activeGenre={18} />
-        <h2>Musicale</h2>
-        <Cards activeGenre={19} />
-      </div>
-    </div>
-  );
+    useEffect(() => {
+        const fetchGenres = async () => {
+            try {
+                const urlRootAPI = "https://localhost:7278/api/";
+                const response = await axios.get(`${urlRootAPI}genere`);
+                setGenereList(response.data);
+            } catch (error) {
+                console.error('Error fetching genres:', error);
+            }
+        };
+
+        fetchGenres();
+    }, []);
+
+    return (
+        <div className='filmBody'>
+            <div>
+                <Navbar />
+            </div>
+            <div className='filmContainer'>
+                <h1>Solo su Prime Vision i migliori film</h1>
+                <h3>Prime Vision produce una straordinaria programmazione originale che non troverai da nessun'altra parte. <br />Film, serie TV, speciali e molto di più... su misura per te.</h3>
+                {genereList.map(genere => (
+                    <div key={genere.id}>
+                        <h2>{genere.nome}</h2>
+                        <Cards activeGenere={genere.id} />
+                    </div>
+                ))}
+            </div>
+        </div>
+    );
 }
 
 export default Film;
-

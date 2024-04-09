@@ -50,3 +50,57 @@
 .hidden {
   display: none;
 }
+
+.modalClass {
+    width: 60%;
+    border: none;
+    outline: none; 
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+}
+  
+
+  .modalClass .container {
+    background-color: #1d1d1d;
+    padding: 2%;
+    border-radius: 25px;
+    display: flex;
+    max-width: 80%;
+    justify-content: flex-start;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.9);
+}
+
+.modalClass .details {
+    margin-left: 50px;
+    color: white;
+}
+
+.modalClass img {
+    width: 350px; 
+    height: auto;
+    border-radius: 20px;
+}
+
+.modalClass h1 {
+    font-size: 2em;
+    color: red;
+}
+
+.modalClass button {
+    border-radius: 8px;
+    padding: 15px 25px;
+    background-color: rgb(200, 0, 0);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 5%;
+    font-size: 1.1em;
+}
+
+.modalClass button:hover {
+    background-color: rgba(255, 0, 0, 0.4);
+}

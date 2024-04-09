@@ -28,7 +28,6 @@ import AttoriDetails from './views/AttoriCrud/AttoriDetails';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Register from './Identity/Register/Register';
 
-
 function App() {
   return (
     <>
