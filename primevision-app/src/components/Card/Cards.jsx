@@ -84,8 +84,9 @@ function Cards({ activeGenre, showSeriesOnly }) {
                 contentLabel="Dettagli del Film/Serie"
                 className={"modalClass"}
             >
+                <div className="close-icon" onClick={closeModal}>x</div>
                 {selectedItem && (
-                    <div className="container">
+                    <div className="container" >
                         <img src={selectedItem.locandina} alt="Locandina" />
                         <div className="details">
                             <h1>{selectedItem.titolo}</h1>

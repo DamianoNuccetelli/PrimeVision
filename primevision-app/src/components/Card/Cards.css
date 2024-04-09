@@ -104,3 +104,12 @@
 .modalClass button:hover {
     background-color: rgba(255, 0, 0, 0.4);
 }
+
+.close-icon {
+    position: absolute;
+    top: 200px;
+    right: 190px;
+    cursor: pointer;
+    color: red;
+    font-size: 20px;
+}
