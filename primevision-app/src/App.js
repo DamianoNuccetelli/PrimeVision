@@ -18,12 +18,15 @@ import SerieDetails from './views/SerieCRUD/SerieDetails';
 import SerieEdit from './views/SerieCRUD/SerieEdit';
 
 import StagioniCrud from './views/StagioniSerieCRUD/StagioniCRUD';
-import StagioniEdit from './views/StagioniSerieCRUD/StagioniEdit';
+// import StagioniEdit from './views/StagioniSerieCRUD/StagioniEdit';
 import StagioniCreate from './views/StagioniSerieCRUD/StagioniCreate';
 import StagioniDetails from './views/StagioniSerieCRUD/StagioniDetails';
 
 import AttoriCrud from './views/AttoriCrud/AttoriCrud';
 import AttoriDetails from './views/AttoriCrud/AttoriDetails';
+
+import RegistiCrud from './views/RegistiCrud/RegistiCRUD';
+import RegistiDetails from './views/RegistiCrud/RegistiDetails';
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Register from './Identity/Register/Register';
@@ -53,9 +56,11 @@ function App() {
           <Route path="/stagioniCRUD" element={<StagioniCrud />} />
           <Route path="/stagioniCRUD/StagioniCreate/" element={<StagioniCreate />} />
           <Route path="/stagioniCRUD/StagioniDetails/:id" element={<StagioniDetails />} />
-          <Route path="/stagioniCRUD/StagioniEdit/:id" element={<StagioniEdit />} />
+          {/* <Route path="/stagioniCRUD/StagioniEdit/:id" element={<StagioniEdit />} /> */}
           <Route path='/attoriCRUD' element={<AttoriCrud />} />
           <Route path='/attoriCRUD/AttoriDetails/:id' element={<AttoriDetails />} />
+          <Route path='/registiCRUD' element={<RegistiCrud />} />
+          <Route path='/registiCRUD/RegistiDetails/:id' element={<RegistiDetails />} />
         </Routes>
       </Router>
     </>

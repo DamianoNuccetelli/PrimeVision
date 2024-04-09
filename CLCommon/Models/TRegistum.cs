@@ -29,6 +29,9 @@ public partial class TRegistum
 
     public int? NumeroOscar { get; set; }
 
+    [StringLength(200)]
+    public string Foto { get; set; }
+
     [InverseProperty("Regista")]
     public virtual ICollection<TRelRegistaOpera> TRelRegistaOperas { get; set; } = new List<TRelRegistaOpera>();
 }
