@@ -24,7 +24,7 @@ function Cards({ activeGenre, showSeriesOnly }) {
                 const API_URL = `${urlRootAPI}${endpoint}`;
 
                 const response = await axios.get(API_URL);
-                const shuffledData = response.data.sort(() => Math.random() - 0.5); 
+                const shuffledData = customShuffleArray(response.data);
 
                 const API_URL_GENERE = "https://localhost:7278/api/Genere";
                 const responseGenere = await axios.get(API_URL_GENERE);
@@ -38,6 +38,19 @@ function Cards({ activeGenre, showSeriesOnly }) {
 
         fetchData();
     }, [activeGenre, showSeriesOnly]);
+
+    function customShuffleArray(array) {
+        const newArray = [...array]; 
+        const length = newArray.length;
+        const shuffledIndexes = Array.from({ length }, (_, index) => index);
+    
+        for (let i = length - 1; i > 0; i--) {
+            const x = Math.floor(Math.random() * (i + 1));
+            [shuffledIndexes[i], shuffledIndexes[x]] = [shuffledIndexes[x], shuffledIndexes[i]];
+        }
+    
+        return shuffledIndexes.map(index => newArray[index]);
+    }
 
     const handleLeftArrowClick = () => {
         setStartIndex(prevIndex => Math.max(0, prevIndex - 1));
